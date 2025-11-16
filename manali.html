@@ -1,124 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manali Travel Guide</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Manali — The Ultimate Travel Guide | AdventureHub</title>
+  <meta name="description" content="Complete Manali travel guide: best time to visit, top attractions (Solang, Rohtang), hotels, activities, 3-day itinerary, travel tips and photo gallery." />
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#98a0a8;
+      --accent:#00d4ff;
+      --glass: rgba(255,255,255,0.04);
+      --maxw:1100px;
+      --radius:14px;
+      --gap:18px;
+      --text:#e6eef6;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg,#071021 0%, #08121a 60%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
-        }
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:18px;}
+    header.hero{
+      border-radius:var(--radius);
+      overflow:hidden;
+      background: url('https://images.unsplash.com/photo-1601297183308-95f47a8221dc?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      min-height:52vh;
+      display:grid;
+      align-items:end;
+      box-shadow:0 10px 30px rgba(0,0,0,0.6);
+    }
+    .hero .overlay{
+      padding:34px;
+      background: linear-gradient(0deg, rgba(7,8,10,0.85), rgba(7,8,10,0.25) 60%);
+    }
+    .hero h1{margin:0;font-size:clamp(28px,4vw,44px);letter-spacing:0.6px}
+    .hero p{margin:8px 0 0;color:var(--muted);font-size:15px}
 
-        header {
-            background: url('https://images.unsplash.com/photo-1589739900211-13f29c52a4da?auto=format&fit=crop&w=1400&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-shadow: 2px 2px 10px black;
-            color: white;
-            font-size: 32px;
-            text-align: center;
-            padding: 10px;
-        }
+    nav.top{
+      display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:18px;
+    }
+    .brand{font-weight:700;color:var(--accent);font-size:18px;text-decoration:none}
+    .links a{color:var(--muted);text-decoration:none;margin-left:12px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;margin-bottom:var(--gap);box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:24px}
+    @media (max-width:920px){.grid{grid-template-columns:1fr}}
 
-        .section {
-            background: white;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px gray;
-        }
+    .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .meta .pill{background:var(--glass);padding:10px 12px;border-radius:999px;color:var(--muted);font-size:13px}
 
-        ul {
-            line-height: 1.6;
-        }
+    h2{margin:6px 0 12px}
+    .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    @media(max-width:700px){.cols{grid-template-columns:1fr}}
 
-        a {
-            text-decoration: none;
-            color: #0077cc;
-        }
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer;display:block;box-shadow:0 6px 18px rgba(0,0,0,0.5)}
 
-        a:hover {
-            text-decoration: underline;
-        }
+    /* info list */
+    ul.info{padding-left:18px;margin:0}
+    ul.info li{margin:10px 0;color:var(--muted)}
 
-        .footer {
-            text-align: center;
-            background: black;
-            color: white;
-            padding: 20px;
-            margin-top: 30px;
-        }
-    </style>
+    /* itinerary */
+    .itinerary{display:flex;flex-direction:column;gap:12px}
+    .it-day{background:linear-gradient(180deg,#08121a,#06101a);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+    .it-day h4{margin:0 0 6px;color:var(--accent)}
+    .it-day p{margin:0;color:var(--muted)}
+
+    /* hotels */
+    .hotel{display:flex;gap:12px;align-items:center}
+    .hotel img{width:110px;height:70px;object-fit:cover;border-radius:8px}
+    .hotel .hinfo{flex:1}
+    .hotel .hinfo h4{margin:0 0 4px}
+    .hotel .hinfo p{margin:0;color:var(--muted);font-size:13px}
+
+    /* map (simple) */
+    .map{border-radius:10px;overflow:hidden;height:220px}
+
+    /* CTA */
+    .cta{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:#00131a;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+
+    footer.sitefoot{margin-top:28px;text-align:center;color:var(--muted);font-size:14px;padding:10px 0}
+
+    /* lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
+    .lightbox img{max-width:90%;max-height:85%;border-radius:8px;box-shadow:0 20px 50px rgba(0,0,0,0.7)}
+    .close-x{position:absolute;top:24px;right:24px;color:#fff;font-size:28px;cursor:pointer}
+
+    /* small labels */
+    .label{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.03);border-radius:8px;color:var(--muted);font-size:13px}
+  </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <nav class="top">
+      <a class="brand" href="index.html">AdventureHub</a>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="manali.html" style="color:var(--text)">Manali</a>
+        <a href="kashmir.html">Kashmir</a>
+        <a href="shimla.html">Shimla</a>
+      </div>
+    </nav>
 
-<header>
-    <h1>🏔️ Manali Travel Guide</h1>
-</header>
+    <header class="hero card" role="banner">
+      <div class="overlay">
+        <h1>Manali — Mountains, Snow & Adventure</h1>
+        <p>Complete premium guide: Solang Valley, Rohtang Pass, trekking, food, hotels & a 3-day itinerary.</p>
 
-<div class="section">
-    <h2>📍 Overview</h2>
-    <p>Manali is one of India's most stunning hill stations, known for snow-capped mountains, scenic beauty, adventure sports, and peaceful vibes. Perfect for couples, friends, and family trips.</p>
-</div>
+        <div class="meta">
+          <span class="pill">Himachal Pradesh</span>
+          <span class="pill">Altitude: 2050 m</span>
+          <span class="pill">Best time: Mar–Jun / Dec–Feb (snow)</span>
+          <span class="pill">Adventure: Skiing • Paragliding • Trekking</span>
+        </div>
 
-<div class="section">
-    <h2>✨ Best Places to Visit</h2>
-    <ul>
-        <li>Solang Valley – skiing, paragliding</li>
-        <li>Rohtang Pass – snow adventure</li>
-        <li>Hadimba Temple – peaceful forest temple</li>
-        <li>Old Manali – cafés & nightlife</li>
-        <li>Jogini Waterfall – short trek</li>
-        <li>Manikaran Sahib – hot springs</li>
-    </ul>
-</div>
+        <div class="cta">
+          <a class="btn" href="#itinerary">3-Day Itinerary</a>
+          <a class="btn ghost" href="#gallery">View Gallery</a>
+        </div>
+      </div>
+    </header>
 
-<div class="section">
-    <h2>❄️ Best Time to Visit</h2>
-    <ul>
-        <li>Winter (Dec–Feb): Snowfall</li>
-        <li>Summer (Apr–Jun): Pleasant climate</li>
-        <li>Monsoon (Jul–Aug): Avoid due to landslides</li>
-    </ul>
-</div>
+    <main class="grid" role="main">
 
-<div class="section">
-    <h2>🚗 How to Reach</h2>
-    <ul>
-        <li><b>By Air:</b> Bhuntar Airport (50 km from Manali)</li>
-        <li><b>By Road:</b> Delhi → Chandigarh → Manali</li>
-        <li><b>By Bus:</b> Volvo buses available from Delhi & Chandigarh</li>
-    </ul>
-</div>
+      <!-- left column -->
+      <section>
+        <article class="card">
+          <h2>Quick Overview</h2>
+          <p style="color:var(--muted)">Manali is a high-altitude Himalayan town with year-round adventure. From snowy slopes at Rohtang to paragliding at Solang, Manali suits families, solo travellers and thrill-seekers alike.</p>
 
-<div class="section">
-    <h2>🧳 Things to Carry</h2>
-    <ul>
-        <li>Warm jackets & gloves</li>
-        <li>Trekking shoes</li>
-        <li>Sunscreen & lip balm</li>
-        <li>Camera & extra batteries</li>
-        <li>Power bank</li>
-    </ul>
-</div>
+          <div style="margin-top:14px" class="cols">
+            <div>
+              <h3>Top Attractions</h3>
+              <ul class="info">
+                <li>Solang Valley — paragliding, skiing, zorbing</li>
+                <li>Rohtang Pass — snow panorama (permit required)</li>
+                <li>Hadimba Temple — peaceful forest temple</li>
+                <li>Jogini Waterfall — short scenic trek</li>
+                <li>Old Manali & Mall Road — cafes & nightlife</li>
+              </ul>
+            </div>
 
-<div class="section">
-    <h2>🔗 Back to Home</h2>
-    <p><a href="index.html">← Go to AdventureHub Homepage</a></p>
-</div>
+            <div>
+              <h3>Quick Tips</h3>
+              <ul class="info">
+                <li>Carry layers — weather changes fast.</li>
+                <li>Rohtang permit: apply online early (if visiting).</li>
+                <li>Cash is handy in small shops; ATMs available in town.</li>
+                <li>Respect local culture & mountains — avoid littering.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
 
-<div class="footer">
-    © 2025 AdventureHub – Explore Fearlessly
-</div>
+        <article id="gallery" class="card">
+          <h2>Photo Gallery</h2>
+          <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1601297183308-95f47a8221dc?auto=format&fit=crop&w=800&q=60" alt="Manali mountains" data-large="https://images.unsplash.com/photo-1601297183308-95f47a8221dc?auto=format&fit=crop&w=1600&q=80">
+            <img src="https://images.unsplash.com/photo-1517821099600-1c9f3e7f5b03?auto=format&fit=crop&w=800&q=60" alt="Solang Valley" data-large="https://images.unsplash.com/photo-1517821099600-1c9f3e7f5b03?auto=format&fit=crop&w=1600&q=80">
+            <img src="https://images.unsplash.com/photo-1535914254981-b5012eebbd15?auto=format&fit=crop&w=800&q=60" alt="Old Manali cafes" data-large="https://images.unsplash.com/photo-1535914254981-b5012eebbd15?auto=format&fit=crop&w=1600&q=80">
+            <img src="https://images.unsplash.com/photo-1583454110559-21f0b9f6b6b2?auto=format&fit=crop&w=800&q=60" alt="Rohtang pass snow" data-large="https://images.unsplash.com/photo-1583454110559-21f0b9f6b6b2?auto=format&fit=crop&w=1600&q=80">
+            <img src="https://images.unsplash.com/photo-1447635242410-5a2b6f40fab6?auto=format&fit=crop&w=800&q=60" alt="Himachal roads" data-large="https://images.unsplash.com/photo-1447635242410-5a2b6f40fab6?auto=format&fit=crop&w=1600&q=80">
+            <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=800&q=60" alt="Trekking trail" data-large="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=1600&q=80">
+          </div>
+          <p style="color:var(--muted);margin-top:12px">Tap any image to enlarge. Use images freely for your site (Unsplash links used).</p>
+        </article>
 
+        <article id="itinerary" class="card">
+          <h2>3-Day Best Itinerary</h2>
+          <div class="itinerary">
+            <div class="it-day">
+              <h4>Day 1 — Arrival, Mall Road & Hadimba</h4>
+              <p>Arrive in Manali (Bhuntar airport / bus). Check-in, relax. Evening: stroll Mall Road, try local cafe food.</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 2 — Solang Valley & Adventure</h4>
+              <p>Full day at Solang Valley: paragliding, ropeway, zorbing. Evening: Old Manali cafes & bonfire.</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 3 — Rohtang Pass / Jogini Waterfall</h4>
+              <p>Visit Rohtang Pass (if open) for snow & photos. If closed, visit Jogini Waterfall & local markets.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Things To Do — Activities & Adventure</h2>
+          <div class="cols">
+            <div>
+              <h3>Adventure</h3>
+              <ul class="info">
+                <li>Skiing & snowboarding (seasonal)</li>
+                <li>Paragliding at Solang Valley</li>
+                <li>River rafting on Beas (nearby seasonally)</li>
+                <li>Short treks & mountain photography</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Relax & Culture</h3>
+              <ul class="info">
+                <li>Visit Hadimba Temple & Van Vihar</li>
+                <li>Explore Mall Road & old bazaars</li>
+                <li>Stay at a homestay to experience local food</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- right column -->
+      <aside>
+        <div class="card">
+          <h3>Quick Facts</h3>
+          <p class="label">Altitude</p>
+          <p style="margin:6px 0 12px">≈ 2,050 m (6,726 ft)</p>
+          <p class="label">Best Season</p>
+          <p style="margin:6px 0 12px">Mar–Jun (pleasant), Dec–Feb (snow)</p>
+
+          <h3 style="margin-top:12px">Top Hotels</h3>
+          <div class="hotel" style="margin-top:10px">
+            <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=400&q=60" alt="hotel">
+            <div class="hinfo"><h4>Snow Valley Resorts</h4><p>Comfortable stay, good views. From budget to mid-range.</p></div>
+          </div>
+
+          <div class="hotel" style="margin-top:10px">
+            <img src="https://images.unsplash.com/photo-1501117716987-c8e36f0f1f3e?auto=format&fit=crop&w=400&q=60" alt="hotel2">
+            <div class="hinfo"><h4>Zostel Manali</h4><p>Budget-friendly, great for solo travellers and groups.</p></div>
+          </div>
+
+          <h3 style="margin-top:12px">How to Reach</h3>
+          <ul class="info">
+            <li>By Air: Bhuntar (Kullu) Airport ~50 km</li>
+            <li>By Train: Joginder Nagar (toy train nearby) / Pathankot or Chandigarh + road</li>
+            <li>By Road: Regular buses/volvos from Delhi (12–14 hrs)</li>
+          </ul>
+
+          <h3 style="margin-top:12px">Local Contacts</h3>
+          <p style="color:var(--muted);font-size:13px">Tour operators, ski rentals and guide services are available in Mall Road & Solang Valley (book locally).</p>
+
+          <div style="margin-top:12px" class="map card">
+            <!-- Simple map iframe (open-source/embed) -->
+            <iframe title="Manali map" width="100%" height="100%" style="border:0" loading="lazy"
+              src="https://www.google.com/maps?q=Manali%20Himachal%20Pradesh&output=embed"></iframe>
+          </div>
+
+          <div style="margin-top:12px">
+            <a class="btn" href="manali.html">Open Classic Manali Page</a>
+            <a class="btn ghost" href="https://www.himachaltourism.gov.in" target="_blank">Himachal Tourism</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Safety & Packing</h3>
+          <ul class="info">
+            <li>Carry warm layers, gloves & thermal wear.</li>
+            <li>Sunscreen & sunglasses (snow glare).</li>
+            <li>Check vehicle permits for Rohtang before planning.</li>
+            <li>Keep chargers & power bank; mobile signals can be weak.</li>
+            <li>Respect local rules; avoid venturing into closed areas.</li>
+          </ul>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer class="card sitefoot">
+      © 2025 AdventureHub — Created by Kaunain Fathima • Follow @kaunainfathima19
+    </footer>
+  </div>
+
+  <!-- lightbox -->
+  <div class="lightbox" id="lb" role="dialog" aria-hidden="true">
+    <div class="close-x" id="lbclose" title="Close">✕</div>
+    <img id="lbimg" src="">
+  </div>
+
+  <script>
+    // simple gallery lightbox
+    const imgs = document.querySelectorAll('.gallery img');
+    const lb = document.getElementById('lb');
+    const lbimg = document.getElementById('lbimg');
+    const lbclose = document.getElementById('lbclose');
+
+    imgs.forEach(img=>{
+      img.addEventListener('click',()=>{
+        const large = img.getAttribute('data-large')||img.src;
+        lbimg.src = large;
+        lb.style.display = 'flex';
+        lb.setAttribute('aria-hidden','false');
+      });
+    });
+    lbclose.addEventListener('click',()=>{
+      lb.style.display='none';
+      lb.setAttribute('aria-hidden','true');
+      lbimg.src='';
+    });
+    lb.addEventListener('click',(e)=>{
+      if(e.target===lb) { lb.style.display='none'; lbimg.src=''; lb.setAttribute('aria-hidden','true'); }
+    });
+  </script>
 </body>
 </html>
