@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Seychelles Honeymoon – Luxury Islands, Beaches & Romance | AdventureHub</title>
+<meta name="description" content="Seychelles honeymoon guide: Anse Source d’Argent, private islands, best beaches, water activities, luxury resorts, 3-day romantic itinerary & travel tips.">
+
+<style>
+  :root {
+    --bg:#f8fffe;
+    --card:#ffffff;
+    --aqua:#38d7c8;       /* ocean turquoise */
+    --pink:#ff8fa3;       /* coral pink */
+    --gold:#f7c76a;       /* soft gold */
+    --muted:#6e7b80;
+    --text:#062f32;
+    --radius:14px;
+    --shadow:0 8px 26px rgba(0,0,0,0.10);
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:"Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#faffff,#ebffff);
+    color:var(--text);
+    line-height:1.6;
+  }
+  .wrap{max-width:var(--maxw);margin:28px auto;padding:18px;}
+
+  /* NAV */
+  nav.top{
+    display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;
+  }
+  .brand{font-weight:800;color:var(--aqua);font-size:20px;text-decoration:none}
+  .links a{color:var(--muted);margin-left:12px;text-decoration:none;font-size:14px}
+
+  /* HERO */
+  header.hero{
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:
+      linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.05)),
+      url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80")
+      center/cover no-repeat;
+    min-height:52vh;
+    display:flex;align-items:flex-end;
+    box-shadow:var(--shadow);
+  }
+  .overlay{
+    padding:32px;color:#fff;text-shadow:0 3px 15px rgba(0,0,0,0.55);
+  }
+  .overlay h1{
+    margin:0;font-size:clamp(26px,4vw,38px);letter-spacing:0.4px;
+  }
+  .overlay p{margin:8px 0 0;color:#e7fefd}
+
+  .pill{
+    display:inline-block;
+    background:rgba(255,255,255,0.2);
+    padding:8px 12px;
+    border-radius:25px;
+    font-size:13px;
+    margin-right:8px;
+    margin-top:10px;
+  }
+
+  /* GRID */
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 340px;
+    gap:22px;
+    margin-top:20px;
+  }
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+  .card{
+    background:var(--card);
+    padding:18px;
+    border-radius:12px;
+    margin-bottom:18px;
+    box-shadow:var(--shadow);
+  }
+  h2{margin:4px 0 10px;}
+  h3{margin:4px 0 8px;}
+
+  /* GALLERY */
+  .gallery{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  }
+  @media(max-width:720px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .gallery img{
+    width:100%;height:150px;object-fit:cover;
+    border-radius:10px;cursor:pointer;
+    box-shadow:0 6px 18px rgba(0,0,0,0.2);
+  }
+
+  /* ITINERARY */
+  .itinerary{display:flex;flex-direction:column;gap:12px;margin-top:6px;}
+  .it-day{
+    background:linear-gradient(180deg,#faffff,#e8ffff);
+    border-left:5px solid var(--aqua);
+    padding:11px;border-radius:10px;
+  }
+  .it-day h4{margin:0 0 5px;color:#075457}
+  .it-day p{margin:0;font-size:14px;color:var(--muted)}
+
+  /* HOTEL */
+  .hotel{
+    display:flex;gap:12px;align-items:center;margin-top:10px;
+  }
+  .hotel img{
+    width:110px;height:70px;object-fit:cover;border-radius:8px;
+  }
+  .hinfo h4{margin:0;font-size:15px}
+  .hinfo p{margin:3px 0 0;color:var(--muted);font-size:13px}
+
+  .map{height:220px;overflow:hidden;border-radius:10px;margin-top:12px;}
+
+  footer.sitefoot{
+    margin-top:26px;padding:10px 0;text-align:center;
+    color:var(--muted);font-size:13px;
+  }
+
+  /* LIGHTBOX */
+  .lightbox{
+    position:fixed;inset:0;background:rgba(0,0,0,0.82);
+    display:none;align-items:center;justify-content:center;
+    padding:20px;z-index:9999;
+  }
+  .lightbox img{
+    max-width:95%;max-height:88%;
+    border-radius:12px;
+    box-shadow:0 22px 60px rgba(0,0,0,0.85);
+  }
+  .close-x{
+    position:absolute;top:20px;right:20px;
+    color:#fff;font-size:30px;cursor:pointer;
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a class="brand" href="index.html">AdventureHub</a>
+    <div class="links">
+      <a href="mauritius.html">Mauritius</a>
+      <a href="maldives.html">Maldives</a>
+      <a href="seychelles.html" style="color:var(--aqua);font-weight:600;">Seychelles</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="overlay">
+      <span class="pill">Honeymoon Special</span>
+      <h1>Seychelles – The World's Most Romantic Islands</h1>
+      <p>Turquoise lagoons, pink-sand beaches, granite rock formations and luxury private villas for couples.</p>
+      <div>
+        <span class="pill">East Africa • Indian Ocean</span>
+        <span class="pill">Best Time: April – October</span>
+        <span class="pill">Private Islands • Romance</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid">
+
+    <!-- LEFT -->
+    <section>
+
+      <article class="card">
+        <h2>Why Seychelles is a Dream Honeymoon?</h2>
+        <p style="color:var(--muted);margin-top:4px;">
+          Seychelles is one of the most exclusive honeymoon destinations in the world.
+          Its untouched nature, white-powder beaches, clear blue waters and luxury resorts
+          make it perfect for couples looking for:
+          <b>privacy, beauty and relaxation</b>.
+        </p>
+
+        <div class="cols" style="margin-top:10px">
+          <div>
+            <h3>Romantic Highlights</h3>
+            <ul style="padding-left:18px;color:var(--muted);font-size:14px">
+              <li>Pink-sand beach walks at sunrise</li>
+              <li>Private ocean-front dinners</li>
+              <li>Couple spa treatments overlooking the sea</li>
+              <li>Catamaran sailing with dolphins</li>
+              <li>Snorkeling & underwater adventures</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Most Beautiful Islands</h3>
+            <ul style="padding-left:18px;color:var(--muted);font-size:14px">
+              <li>Mahé – main island</li>
+              <li>Praslin – famous beaches</li>
+              <li>La Digue – iconic granite rocks</li>
+              <li>Silhouette Island – ultra luxury</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80">
+          <img src="https://images.unsplash.com/photo-1505839673365-e3971f8d9184?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1505839673365-e3971f8d9184?auto=format&fit=crop&w=1600&q=80">
+          <img src="https://images.unsplash.com/photo-1504615755583-2916b52192d3?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1504615755583-2916b52192d3?auto=format&fit=crop&w=1600&q=80">
+          <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1600&q=80">
+          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1600&q=80">
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80">
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-top:10px">
+          Tap any image to enlarge (Unsplash photos).
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>3-Day Romantic Honeymoon Itinerary</h2>
+
+        <div class="itinerary">
+
+          <div class="it-day">
+            <h4>Day 1 — Arrival & Secret Beaches</h4>
+            <p>Relax at Anse Intendance or Beau Vallon Beach. Enjoy a private dinner arranged by your resort.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 2 — La Digue & Anse Source d’Argent</h4>
+            <p>Visit the most photographed beach in the world. Explore La Digue on bicycles, capture honeymoon pictures.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 3 — Praslin & Snorkeling</h4>
+            <p>Visit Vallée de Mai forest and take a catamaran cruise for snorkeling with fishes and turtles.</p>
+          </div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <!-- RIGHT -->
+    <aside>
+
+      <div class="card">
+        <h3>Top Honeymoon Resorts</h3>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1501117716987-c8e36f0f1f3e?auto=format&fit=crop&w=400&q=60">
+          <div class="hinfo">
+            <h4>Private Pool Villa</h4>
+            <p>Ocean view, infinity pool & complete privacy.</p>
+          </div>
+        </div>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=400&q=60">
+          <div class="hinfo">
+            <h4>Luxury Island Resort</h4>
+            <p>All-inclusive romantic stay + couple spa.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:14px">How to Reach</h3>
+        <ul style="padding-left:18px;color:var(--muted);font-size:14px">
+          <li>Fly to Mahé International Airport.</li>
+          <li>Take ferries to Praslin & La Digue.</li>
+          <li>Most resorts offer private transfers.</li>
+        </ul>
+
+        <h3 style="margin-top:12px">Seychelles on Map</h3>
+        <div class="map">
+          <iframe title="Seychelles map" width="100%" height="100%" style="border:0" loading="lazy"
+            src="https://www.google.com/maps?q=Seychelles&output=embed"></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>What to Pack</h3>
+        <ul style="padding-left:18px;color:var(--muted);font-size:14px">
+          <li>Light cotton clothes</li>
+          <li>Beach wear & flip-flops</li>
+          <li>Underwater camera</li>
+          <li>Reef-safe sunscreen</li>
+          <li>Romantic outfits for dinner</li>
+        </ul>
+      </div>
+
+    </aside>
+  </main>
+
+  <footer class="sitefoot">
+    © 2025 AdventureHub — Seychelles Honeymoon Guide • Created by Kaunain Fathima • Follow @kaunainfathima19
+  </footer>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lb">
+  <div class="close-x" id="lbclose">✕</div>
+  <img id="lbimg" src="">
+</div>
+
+<script>
+  const imgs = document.querySelectorAll('.gallery img');
+  const lb = document.getElementById('lb');
+  const lbimg = document.getElementById('lbimg');
+  const closex = document.getElementById('lbclose');
+
+  imgs.forEach(img=>{
+    img.addEventListener('click',()=>{
+      lbimg.src = img.dataset.large || img.src;
+      lb.style.display='flex';
+    });
+  });
+
+  closex.addEventListener('click',()=>{
+    lb.style.display='none';
+    lbimg.src='';
+  });
+
+  lb.addEventListener('click',(e)=>{
+    if(e.target===lb){
+      lb.style.display='none';
+      lbimg.src='';
+    }
+  });
+</script>
+
+</body>
+</html>
