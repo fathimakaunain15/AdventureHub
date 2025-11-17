@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Santorini Honeymoon — Blue Domes, Sunsets & Romance | AdventureHub</title>
+  <meta name="description" content="Santorini honeymoon guide: Oia sunsets, Fira cliff walks, cave hotels, infinity pools, romantic activities, 3-day itinerary, photo gallery and travel tips." />
+
+  <style>
+    :root{
+      --bg:#f8fbff;
+      --card:#ffffff;
+      --santi-blue:#3e6df6;
+      --sunset:#ff9e80;
+      --gold:#f5d887;
+      --muted:#6f7b85;
+      --text:#062034;
+      --radius:14px;
+      --shadow:0 14px 40px rgba(8,22,48,0.06);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Inter", "Segoe UI", Roboto, system-ui, -apple-system, Arial, sans-serif;
+      background: linear-gradient(180deg,#fbfdff 0%, #f1f8ff 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      line-height:1.6;
+    }
+    .wrap{max-width:var(--maxw);margin:26px auto;padding:18px}
+
+    nav.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+    .brand{font-weight:800;color:var(--santi-blue);font-size:20px;text-decoration:none}
+    .links a{color:var(--muted);text-decoration:none;margin-left:12px;font-size:14px}
+
+    header.hero{
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(10,20,40,0.18), rgba(255,255,255,0.02)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      min-height:52vh;
+      display:flex;align-items:flex-end;
+      box-shadow:var(--shadow);
+    }
+    .overlay{padding:32px;color:#fff;text-shadow:0 6px 20px rgba(0,0,0,0.35)}
+    .overlay h1{margin:0;font-size:clamp(26px,4vw,40px);letter-spacing:0.4px}
+    .overlay p{margin:8px 0 0;color:rgba(255,255,255,0.92)}
+
+    .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .pill{background:rgba(255,255,255,0.09);padding:8px 12px;border-radius:999px;color:rgba(255,255,255,0.95);font-size:13px}
+
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:20px}
+    @media(max-width:920px){.grid{grid-template-columns:1fr}}
+
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);margin-bottom:18px}
+    h2{margin:6px 0 12px}
+
+    .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    @media(max-width:700px){.cols{grid-template-columns:1fr}}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;cursor:pointer;display:block;box-shadow:0 8px 22px rgba(8,22,48,0.06)}
+
+    .itinerary{display:flex;flex-direction:column;gap:12px}
+    .it-day{background:linear-gradient(180deg,#fffefc,#fffaf8);border-left:6px solid var(--santi-blue);padding:12px;border-radius:10px}
+    .it-day h4{margin:0 0 6px;color:var(--santi-blue)}
+    .it-day p{margin:0;color:var(--muted)}
+
+    .hotel{display:flex;gap:12px;align-items:center;margin-top:10px}
+    .hotel img{width:110px;height:70px;object-fit:cover;border-radius:8px}
+    .hinfo h4{margin:0}
+    .hinfo p{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+    .map{border-radius:10px;overflow:hidden;height:220px;margin-top:10px}
+
+    footer.sitefoot{margin-top:24px;text-align:center;color:var(--muted);font-size:13px;padding:10px 0}
+
+    /* lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.84);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
+    .lightbox img{max-width:94%;max-height:86%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.85)}
+    .close-x{position:absolute;top:18px;right:18px;color:#fff;font-size:28px;cursor:pointer}
+
+    .tag{display:inline-block;padding:6px 10px;background:var(--santi-blue);color:#fff;border-radius:999px;font-weight:700;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top">
+      <a class="brand" href="index.html">AdventureHub</a>
+      <div class="links">
+        <a href="paris.html">Paris</a>
+        <a href="santorini.html" style="color:var(--santi-blue);font-weight:700">Santorini</a>
+        <a href="greece.html">Greece</a>
+      </div>
+    </nav>
+
+    <header class="hero" role="banner">
+      <div class="overlay">
+        <span class="tag">Honeymoon Exclusive</span>
+        <h1>Santorini — Blue Domes, Cliff Sunsets & Romantic Caves</h1>
+        <p>Whitewashed lanes, iconic blue-domed churches and unforgettable Oia sunsets — Santorini is made for lovers.</p>
+
+        <div class="meta">
+          <span class="pill">Greece • Cyclades</span>
+          <span class="pill">Best Time: May–Oct (sunny & warm)</span>
+          <span class="pill">Sunsets • Cave Hotels • Cliff Views</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid" role="main">
+      <!-- LEFT -->
+      <section>
+        <article class="card">
+          <h2>Why Santorini Is Perfect for Honeymoon</h2>
+          <p style="color:var(--muted)">Santorini is postcard-perfect — dramatic cliffs, cobalt sea, iconic white architecture and the world-famous sunset of Oia. It’s intimate, photogenic and ideal for couples seeking romance, sunsets and chilled luxury.</p>
+
+          <div class="cols" style="margin-top:12px">
+            <div>
+              <h3>Romantic Highlights</h3>
+              <ul style="color:var(--muted);padding-left:18px">
+                <li>Oia sunsets from the castle & cliff terraces</li>
+                <li>Private caldera cruise with sunset dinner</li>
+                <li>Stay in an Oia cave villa with private plunge pool</li>
+                <li>Wine tasting at local vineyards (Assyrtiko)</li>
+                <li>Photoshoot in narrow white lanes & blue domes</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Best Areas to Stay</h3>
+              <ul style="color:var(--muted);padding-left:18px">
+                <li>Oia — sunset views & luxury caves</li>
+                <li>Fira — central, nightlife & dining</li>
+                <li>Imerovigli — quieter, cliffside romance</li>
+                <li>Akrotiri — black sand beaches & lighthouses</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="gallery">
+          <h2>Photo Gallery</h2>
+          <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1505765052064-5f6b5d0b7b1d?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1505765052064-5f6b5d0b7b1d?auto=format&fit=crop&w=1600&q=80" alt="Oia sunset">
+            <img src="https://images.unsplash.com/photo-1505691723518-36a0b36a1b4d?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1505691723518-36a0b36a1b4d?auto=format&fit=crop&w=1600&q=80" alt="Blue domes">
+            <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=1600&q=80" alt="Cliff hotels">
+            <img src="https://images.unsplash.com/photo-1508264165352-258a6a5b8f6d?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1508264165352-258a6a5b8f6d?auto=format&fit=crop&w=1600&q=80" alt="Caldera cruise">
+            <img src="https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&w=1600&q=80" alt="Infinity pool">
+            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1600&q=80" alt="Narrow lanes">
+          </div>
+          <p style="color:var(--muted);margin-top:10px">Tap images to enlarge. (Unsplash demo photos.)</p>
+        </article>
+
+        <article class="card" id="itinerary">
+          <h2>3-Day Santorini Romantic Itinerary</h2>
+          <div class="itinerary">
+            <div class="it-day">
+              <h4>Day 1 — Arrival, Oia & Sunset</h4>
+              <p>Check into a cave villa. Explore Oia’s lanes, then secure a cliff spot for the world-famous sunset. Dinner at a romantic terrace restaurant.</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 2 — Caldera Cruise & Hot Springs</h4>
+              <p>Take a day caldera cruise visiting the volcanic islets, swim at hot springs, snorkel and enjoy a sunset sail with onboard dinner.</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 3 — Wine Tasting & Akrotiri</h4>
+              <p>Morning wine tasting at a local vineyard (Assyrtiko wines). Afternoon visit to Akrotiri ruins and Red Beach. Sunset photoshoot at Imerovigli.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Food & Romantic Dining</h2>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Fresh seafood & local Greek mezze at cliffside tavernas.</li>
+            <li>Try local white Assyrtiko wine and tomato keftedes.</li>
+            <li>Book a private terrace dinner for sunset views.</li>
+            <li>Enjoy late-night gelato while walking Oia lanes.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- RIGHT -->
+      <aside>
+        <div class="card">
+          <h3>Top Cave Hotels & Villas</h3>
+
+          <div class="hotel">
+            <img src="https://images.unsplash.com/photo-1522706604294-3816a6ff3f2b?auto=format&fit=crop&w=400&q=60" alt="cave hotel">
+            <div class="hinfo">
+              <h4>Oia Cave Villa with Plunge Pool</h4>
+              <p>Private terrace, caldera view & sunset-facing pool.</p>
+            </div>
+          </div>
+
+          <div class="hotel" style="margin-top:10px">
+            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=400&q=60" alt="luxury hotel">
+            <div class="hinfo">
+              <h4>Imerovigli Boutique Hotel</h4>
+              <p>Quieter cliffs, infinity pools & photo-perfect balconies.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:14px">How to Reach</h3>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Fly to Santorini (Thira) National Airport (direct seasonal flights from Athens and Europe).</li>
+            <li>Ferry connections from Athens (Piraeus) & nearby islands (faster or slower options available).</li>
+            <li>Local transfers & sea taxis are common; many hotels provide pickups.</li>
+          </ul>
+
+          <h3 style="margin-top:12px">Santorini on Map</h3>
+          <div class="map">
+            <iframe title="Santorini map" width="100%" height="220" style="border:0" loading="lazy"
+              src="https://www.google.com/maps?q=Santorini&output=embed"></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Packing & Tips</h3>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Comfortable sandals & light layers for windy evenings.</li>
+            <li>Sun protection — hats, sunglasses & reef-safe sunscreen.</li>
+            <li>Book sunset restaurants & caldera cruises in advance.</li>
+            <li>Pick sunrise or early morning for photos to avoid crowds.</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="sitefoot">
+      © 2025 AdventureHub — Santorini Honeymoon Guide • Created by Kaunain Fathima • Follow @kaunainfathima19
+    </footer>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lb" role="dialog" aria-hidden="true">
+    <div class="close-x" id="lbclose" title="Close">✕</div>
+    <img id="lbimg" src="" alt="expanded image">
+  </div>
+
+  <script>
+    // gallery lightbox
+    const imgs = document.querySelectorAll('.gallery img');
+    const lb = document.getElementById('lb');
+    const lbimg = document.getElementById('lbimg');
+    const lbclose = document.getElementById('lbclose');
+
+    imgs.forEach(img=>{
+      img.addEventListener('click',()=>{
+        const large = img.getAttribute('data-large') || img.src;
+        lbimg.src = large;
+        lb.style.display = 'flex';
+        lb.setAttribute('aria-hidden','false');
+      });
+    });
+
+    lbclose.addEventListener('click',()=>{
+      lb.style.display='none';
+      lb.setAttribute('aria-hidden','true');
+      lbimg.src='';
+    });
+
+    lb.addEventListener('click',(e)=>{
+      if(e.target===lb){
+        lb.style.display='none';
+        lbimg.src='';
+        lb.setAttribute('aria-hidden','true');
+      }
+    });
+  </script>
+</body>
+</html>
