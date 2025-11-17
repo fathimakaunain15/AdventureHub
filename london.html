@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>London Adventure — Big Ben, London Eye, Harry Potter & City Guide | AdventureHub</title>
+  <meta name="description" content="London Adventure Guide — Big Ben, London Eye, Tower Bridge, Harry Potter Studios, Thames Cruise, top hotels and 3-day itinerary." />
+
+  <style>
+    :root{
+      --blue:#1e2a78;
+      --sky:#4c6ef5;
+      --gold:#f8d34b;
+      --light:#f2f4ff;
+      --muted:#7d7d7d;
+      --text:#1a1a1a;
+      --card:#ffffff;
+      --radius:14px;
+      --shadow:0 10px 35px rgba(0,0,0,0.08);
+      --maxw:1100px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:"Inter","Segoe UI",Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#ffffff,#eef0ff);
+      color:var(--text);
+    }
+
+    .wrap{
+      max-width:var(--maxw);
+      margin:26px auto;
+      padding:18px;
+    }
+
+    /* NAV */
+    nav.top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:18px;
+    }
+
+    .brand{
+      font-size:20px;
+      font-weight:800;
+      color:var(--blue);
+      text-decoration:none;
+    }
+
+    .links a{
+      margin-left:12px;
+      color:var(--muted);
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    /* HERO */
+    header.hero{
+      border-radius:var(--radius);
+      overflow:hidden;
+      min-height:52vh;
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0.1)),
+        url('https://images.unsplash.com/photo-1543340713-8a3f0e7b3408?auto=format&fit=crop&w=1600&q=80')
+        center/cover;
+      box-shadow:var(--shadow);
+    }
+
+    .overlay{
+      padding:34px;
+      color:white;
+    }
+
+    .tag{
+      background:var(--gold);
+      padding:6px 12px;
+      color:#6e5700;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      background:rgba(255,255,255,0.1);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+    }
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:22px;
+      margin-top:20px;
+    }
+
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr;}
+    }
+
+    .card{
+      background:var(--card);
+      padding:18px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+    }
+
+    h2{margin:6px 0 12px;}
+
+    /* GALLERY */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    }
+
+    @media(max-width:700px){
+      .gallery{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    .gallery img{
+      width:100%;
+      height:150px;
+      border-radius:10px;
+      object-fit:cover;
+      cursor:pointer;
+      transition:0.2s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
+
+    /* ITINERARY */
+    .itinerary{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .it-day{
+      background:var(--light);
+      border-left:6px solid var(--sky);
+      padding:12px;
+      border-radius:10px;
+    }
+
+    .it-day h4{
+      margin:0 0 4px;
+      color:var(--blue);
+    }
+
+    /* HOTELS */
+    .hotel{
+      display:flex;
+      gap:12px;
+      margin-top:12px;
+      align-items:center;
+    }
+
+    .hotel img{
+      width:110px;
+      height:70px;
+      border-radius:10px;
+      object-fit:cover;
+    }
+
+    /* MAP */
+    .map{
+      height:220px;
+      border-radius:10px;
+      overflow:hidden;
+      margin-top:12px;
+    }
+
+    footer{
+      margin-top:30px;
+      padding:20px 6px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    /* LIGHTBOX */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.85);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+      padding:20px;
+    }
+
+    .lightbox img{
+      max-width:90%;
+      max-height:85%;
+      border-radius:10px;
+    }
+
+    .close-x{
+      position:absolute;
+      top:22px;
+      right:22px;
+      font-size:30px;
+      color:white;
+      cursor:pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <!-- NAV -->
+  <nav class="top">
+    <a href="index.html" class="brand">AdventureHub</a>
+    <div class="links">
+      <a href="london.html" style="color:var(--blue);font-weight:700">London</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="overlay">
+      <span class="tag">International Adventure Premium</span>
+      <h1>London — Land of Royalty, Night Lights & World Icons</h1>
+      <p>From Big Ben to Harry Potter World — London is the perfect mix of history and modern adventure.</p>
+
+      <div class="meta">
+        <span class="pill">Big Ben</span>
+        <span class="pill">London Eye</span>
+        <span class="pill">Tower Bridge</span>
+        <span class="pill">Harry Potter Studios</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="grid">
+
+    <!-- LEFT -->
+    <section>
+
+      <article class="card">
+        <h2>Why Visit London?</h2>
+        <p style="color:var(--muted)">
+          London is one of the world's greatest cities — rich culture, stunning architecture,
+          amazing shopping, royal palaces, and iconic attractions everywhere.
+        </p>
+
+        <div class="cols">
+          <div>
+            <h3>Top Attractions</h3>
+            <ul style="padding-left:18px;color:var(--muted)">
+              <li>Big Ben & Westminster</li>
+              <li>London Eye</li>
+              <li>Tower Bridge</li>
+              <li>Buckingham Palace</li>
+              <li>Oxford Street Shopping</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Unique Experiences</h3>
+            <ul style="padding-left:18px;color:var(--muted)">
+              <li>Thames River Cruise</li>
+              <li>Harry Potter Studios</li>
+              <li>London Underground</li>
+              <li>Coca-Cola London Eye ride</li>
+              <li>British Museum Visit</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- GALLERY -->
+      <article class="card" id="gallery">
+        <h2>Photo Gallery</h2>
+
+        <div class="gallery">
+          <img src="https://images.unsplash.com/photo-1543340713-8a3f0e7b3408?auto=format&fit=crop&w=900&q=60"
+               data-large="https://images.unsplash.com/photo-1543340713-8a3f0e7b3408?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=900&q=60"
+               data-large="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1425421669292-0c3da3b6bf5f?auto=format&fit=crop&w=900&q=60"
+               data-large="https://images.unsplash.com/photo-1425421669292-0c3da3b6bf5f?auto=format&fit=crop&w=1600&q=80">
+        </div>
+
+      </article>
+
+      <!-- ITINERARY -->
+      <article class="card">
+        <h2>3-Day Adventure Itinerary</h2>
+
+        <div class="itinerary">
+
+          <div class="it-day">
+            <h4>Day 1 — Big Ben, London Eye & River Cruise</h4>
+            <p>Start at Westminster, enjoy the London Eye, and relax on a Thames cruise.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 2 — Tower Bridge & Harry Potter Studios</h4>
+            <p>Visit Tower Bridge, then head to Warner Bros Harry Potter Studio Tour.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 3 — Buckingham Palace & Oxford Street</h4>
+            <p>Experience royalty, watch the Guard Change, then shop at Oxford Street.</p>
+          </div>
+
+        </div>
+      </article>
+
+    </section>
+
+    <!-- RIGHT -->
+    <aside>
+
+      <div class="card">
+        <h3>Best London Hotels</h3>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=400&q=60">
+          <div>
+            <h4>Park Plaza Westminster</h4>
+            <p style="color:var(--muted)">Near London Eye • Luxury</p>
+          </div>
+        </div>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=400&q=60">
+          <div>
+            <h4>The Shard Hotel</h4>
+            <p style="color:var(--muted)">Skyline views • Premium</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:12px">How to Reach</h3>
+        <ul style="padding-left:18px;color:var(--muted)">
+          <li>Heathrow Airport (main hub)</li>
+          <li>Tube (Underground) for city travel</li>
+          <li>Buses & taxis available everywhere</li>
+        </ul>
+
+        <div class="map">
+          <iframe src="https://www.google.com/maps?q=London&output=embed"
+                  width="100%" height="100%" style="border:0"></iframe>
+        </div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    © 2025 AdventureHub — London Guide • Created by Kaunain Fathima
+  </footer>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lb">
+  <div class="close-x" id="lbclose">✕</div>
+  <img id="lbimg" src="">
+</div>
+
+<script>
+  const imgs=document.querySelectorAll('.gallery img');
+  const lb=document.getElementById('lb');
+  const lbimg=document.getElementById('lbimg');
+  const close=document.getElementById('lbclose');
+
+  imgs.forEach(img=>{
+    img.addEventListener('click',()=>{
+      lbimg.src=img.getAttribute('data-large')||img.src;
+      lb.style.display='flex';
+    });
+  });
+
+  close.addEventListener('click',()=>lb.style.display='none');
+  lb.addEventListener('click',e=>{ if(e.target===lb) lb.style.display='none'; });
+</script>
+
+</body>
+</html>
