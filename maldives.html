@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Maldives — Luxury Beach & Water Villas | AdventureHub</title>
+
+<style>
+  :root{
+    --bg:#e9fbff;
+    --card:#ffffff;
+    --accent:#2fc7e6;     /* lagoon blue */
+    --deep:#003f5c;       /* deep ocean */
+    --muted:#6b8a93;
+    --text:#082026;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(0,0,0,0.08);
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:linear-gradient(180deg,#f7feff 0%, #e9fbff 100%);
+    color:var(--text);
+    line-height:1.6;
+  }
+  .wrap{max-width:var(--maxw);margin:28px auto;padding:18px;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .brand{font-weight:800;color:var(--deep);font-size:20px;text-decoration:none}
+  .links a{color:var(--muted);text-decoration:none;margin-left:12px}
+
+  header.hero{
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.03)),
+      url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    min-height:52vh; display:flex;align-items:flex-end;
+    box-shadow:var(--shadow);
+  }
+  .overlay{padding:34px;color:white;text-shadow:0 2px 12px rgba(0,0,0,0.3)}
+  .overlay h1{margin:0;font-size:38px}
+  .overlay p{margin-top:8px;color:#dff7fb}
+
+  .pill{display:inline-block;background:rgba(255,255,255,0.18);padding:8px 12px;border-radius:20px;margin-right:8px;color:white;font-size:13px}
+
+  .grid{display:grid;grid-template-columns:1fr 340px;gap:24px;margin-top:20px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+  .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);margin-bottom:18px}
+
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;cursor:pointer;display:block}
+
+  .itinerary{display:flex;flex-direction:column;gap:12px}
+  .it-day{background:linear-gradient(180deg,#f0fbff,#ffffff);border-left:6px solid var(--accent);padding:12px;border-radius:10px}
+  .it-day h4{margin:0 0 6px;color:var(--deep)}
+  .it-day p{margin:0;color:var(--muted)}
+
+  .hotel{display:flex;gap:12px;align-items:center;margin-top:10px}
+  .hotel img{width:110px;height:70px;object-fit:cover;border-radius:8px}
+  .hinfo h4{margin:0}
+  .hinfo p{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+  .map{border-radius:10px;overflow:hidden;height:220px}
+
+  footer.sitefoot{margin-top:28px;text-align:center;color:var(--muted);font-size:14px;padding:12px 0}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
+  .lightbox img{max-width:96%;max-height:88%;border-radius:10px;box-shadow:0 20px 50px rgba(0,0,0,0.6)}
+  .close-x{position:absolute;top:18px;right:18px;color:#fff;font-size:28px;cursor:pointer}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top">
+      <a class="brand" href="index.html">AdventureHub</a>
+      <div class="links">
+        <a href="dubai.html">Dubai</a>
+        <a href="maldives.html" style="color:var(--deep)">Maldives</a>
+        <a href="jaisalmer.html">Jaisalmer</a>
+      </div>
+    </nav>
+
+    <header class="hero card" role="banner">
+      <div class="overlay">
+        <h1>Maldives — Water Villas & Crystal Lagoons</h1>
+        <p>Private islands, overwater villas, coral reefs, snorkeling and world-class resorts.</p>
+
+        <div style="margin-top:12px">
+          <span class="pill">Island Nation</span>
+          <span class="pill">Best Time: Nov – Apr</span>
+          <span class="pill">Snorkeling • Diving • Luxury</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid" role="main">
+      <!-- left -->
+      <section>
+        <article class="card">
+          <h2>Quick Overview</h2>
+          <p style="color:var(--muted)">The Maldives is a tropical paradise of coral atolls and turquoise lagoons — ideal for honeymooners, divers and luxury travellers. Expect crystal-clear water, vibrant marine life, and private island resorts.</p>
+        </article>
+
+        <article class="card">
+          <h2>Photo Gallery</h2>
+          <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Maldives lagoon">
+            <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1600&q=80" alt="Water villa">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Coral reef">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1600&q=80" alt="Sunset cruise">
+            <img src="https://images.unsplash.com/photo-1501426026826-31c667bdf23d?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1501426026826-31c667bdf23d?auto=format&fit=crop&w=1600&q=80" alt="Lagoon blue">
+            <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1600&q=80" alt="Resort pool">
+          </div>
+          <p style="color:var(--muted);margin-top:10px">Tap images to enlarge. (Images from Unsplash.)</p>
+        </article>
+
+        <article class="card">
+          <h2>3-Day Luxury Itinerary</h2>
+          <div class="itinerary">
+            <div class="it-day">
+              <h4>Day 1 — Arrival, Resort Transfer & Relax</h4>
+              <p>Seaplane or speedboat transfer to your private island resort. Sunset walk and spa recovery.</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 2 — Snorkeling & Water Sports</h4>
+              <p>Guided snorkeling at the house reef, optional scuba dive, paddleboarding and sunset cruise.</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 3 — Island Hopping & Romantic Dinner</h4>
+              <p>Visit nearby sandbank, picnic on a deserted isle and private beach dinner under stars.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Diving & Marine Life</h2>
+          <p style="color:var(--muted)">The Maldives is home to colorful coral gardens, manta rays, whale sharks (seasonal) and abundant reef fish. Choose a PADI-certified dive centre, check visibility and protected areas, and follow reef-safe sunscreen practices.</p>
+        </article>
+      </section>
+
+      <!-- right -->
+      <aside>
+        <div class="card">
+          <h3>Top Resorts</h3>
+
+          <div class="hotel">
+            <img src="https://images.unsplash.com/photo-1542317854-9c3e3f7b9e37?auto=format&fit=crop&w=400&q=60" alt="resort1">
+            <div class="hinfo"><h4>Overwater Luxury Villas</h4><p>Private deck, direct lagoon access & glass floors.</p></div>
+          </div>
+
+          <div class="hotel" style="margin-top:12px">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400&q=60" alt="resort2">
+            <div class="hinfo"><h4>Private Island Resort</h4><p>All-inclusive option, spa & romantic dining.</p></div>
+          </div>
+
+          <h3 style="margin-top:14px">How to Reach</h3>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Fly to Malé (Velana International Airport)</li>
+            <li>Transfer by seaplane or speedboat to island resorts</li>
+            <li>Season: November–April for best weather and calm seas</li>
+          </ul>
+
+          <h3 style="margin-top:12px">Map</h3>
+          <div class="map card">
+            <iframe title="Maldives map" width="100%" height="100%" style="border:0" loading="lazy"
+              src="https://www.google.com/maps?q=Maldives&output=embed"></iframe>
+          </div>
+
+          <div style="margin-top:12px">
+            <a class="btn" href="#" style="text-decoration:none;background:var(--accent);color:white;padding:10px 14px;border-radius:10px;font-weight:700">View Resorts</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Packing & Tips</h3>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Light cotton clothing, swimwear & reef-safe sunscreen.</li>
+            <li>Snorkel mask (optional), waterproof bag for phones.</li>
+            <li>Respect local customs on inhabited islands (cover shoulders/legs).</li>
+            <li>Book transfers early; seaplane schedules depend on tide/daylight.</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="sitefoot">
+      © 2025 AdventureHub — Created by Kaunain Fathima • Follow @kaunainfathima19
+    </footer>
+  </div>
+
+  <!-- lightbox -->
+  <div class="lightbox" id="lb" role="dialog" aria-hidden="true">
+    <div class="close-x" id="lbclose" title="Close">✕</div>
+    <img id="lbimg" src="">
+  </div>
+
+  <script>
+    // simple gallery lightbox
+    const imgs = document.querySelectorAll('.gallery img');
+    const lb = document.getElementById('lb');
+    const lbimg = document.getElementById('lbimg');
+    const lbclose = document.getElementById('lbclose');
+
+    imgs.forEach(img=>{
+      img.addEventListener('click',()=>{
+        const large = img.getAttribute('data-large')||img.src;
+        lbimg.src = large;
+        lb.style.display = 'flex';
+        lb.setAttribute('aria-hidden','false');
+      });
+    });
+    lbclose.addEventListener('click',()=>{
+      lb.style.display='none';
+      lb.setAttribute('aria-hidden','true');
+      lbimg.src='';
+    });
+    lb.addEventListener('click',(e)=>{
+      if(e.target===lb) { lb.style.display='none'; lbimg.src=''; lb.setAttribute('aria-hidden','true'); }
+    });
+  </script>
+</body>
+</html>
