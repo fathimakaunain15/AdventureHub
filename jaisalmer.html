@@ -1,281 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
+<meta charset="UTF-8" />
+<title>Jaisalmer – Golden Desert, Fort & Safari | AdventureHub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jaisalmer — The Golden Desert City | AdventureHub</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
   :root {
-    --bg: #fff8e4;
-    --card: #ffffff;
-    --accent: #d4a126;     /* desert gold */
-    --sand: #f5d58b;       /* sand yellow */
-    --muted: #6e6148;      /* desert brown */
-    --text: #2f2617;
-    --radius: 15px;
-    --shadow: 0 6px 25px rgba(0,0,0,0.1);
-    --maxw: 1100px;
+    --bg-main:#050509;
+    --bg-card:#111119;
+    --bg-soft:#181821;
+    --accent:#d4a651;
+    --accent-soft:#f5e2b4;
+    --text-main:#f5f5f5;
+    --text-muted:#bbbbc6;
+    --border-soft:#262637;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:radial-gradient(circle at top,#201c29,#050509 45%);
+    font-family:Poppins,sans-serif;color:var(--text-main);
   }
 
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
+  header{
+    position:sticky;top:0;padding:14px 20px;
+    background:rgba(5,5,9,.95);display:flex;
+    justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.05);
+    backdrop-filter:blur(12px);
+  }
+  .logo{color:var(--accent);font-weight:700;font-size:1.2rem;}
+
+  nav a{margin-left:14px;color:var(--text-muted);font-size:.9rem;}
+  nav a.active{color:var(--accent-soft);}
+
+  .page{max-width:960px;margin:auto;padding:24px 16px 60px;}
+
+  .hero{
+    height:360px;border-radius:22px;overflow:hidden;position:relative;
+    margin-bottom:20px;box-shadow:0 25px 60px rgba(0,0,0,.7);
+  }
+  .hero img{width:100%;height:100%;object-fit:cover;filter:brightness(60%);}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.9));}
+  .hero-content{position:absolute;bottom:26px;left:18px;}
+  .pill{
+    padding:4px 11px;border-radius:999px;background:rgba(0,0,0,.6);
+    color:var(--accent-soft);border:1px solid rgba(255,255,255,.15);
+    font-size:.75rem;
+  }
+  .hero-title{font-size:2rem;font-weight:700;margin:8px 0;}
+  .hero-sub{max-width:520px;color:var(--text-muted);}
+
+  .section{
+    background:var(--bg-card);padding:20px;border-radius:18px;
+    border:1px solid var(--border-soft);margin-bottom:22px;
+    box-shadow:0 18px 40px rgba(0,0,0,.6);
+  }
+  .section h2{color:var(--accent-soft);margin-bottom:10px;font-size:1.25rem;}
+  .section p,.section li{color:var(--text-muted);}
+
+  ul{padding-left:18px;}
+
+  .gallery-grid{
+    display:grid;gap:10px;grid-template-columns:repeat(2,1fr);
+  }
+  @media(min-width:720px){
+    .gallery-grid{grid-template-columns:repeat(4,1fr);}
+  }
+  .gallery-grid img{height:130px;object-fit:cover;width:100%;border-radius:14px;}
+
+  .itinerary-grid{display:grid;gap:12px;}
+  @media(min-width:720px){
+    .itinerary-grid{grid-template-columns:repeat(3,1fr);}
   }
 
-  .wrap { max-width: var(--maxw); margin: 28px auto; padding: 18px; }
+  .day-card{
+    background:var(--bg-soft);padding:12px;border-radius:14px;
+    border:1px solid var(--border-soft);
+  }
+  .day-title{color:var(--accent-soft);margin-bottom:4px;font-weight:600;}
 
-  nav.top {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 18px;
+  .hotel-row{
+    background:var(--bg-soft);padding:12px;border-radius:14px;
+    display:flex;gap:10px;border:1px solid var(--border-soft);
+    margin-bottom:12px;
   }
-  .brand {
-    font-weight: 700; color: var(--accent); font-size: 22px;
-    text-decoration: none;
-  }
-  .links a {
-    color: var(--muted); text-decoration: none; margin-left: 12px;
-  }
-
-  /* HERO */
-  header.hero {
-    border-radius: var(--radius);
-    overflow: hidden;
-    background:
-      linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.2)),
-      url('https://images.unsplash.com/photo-1599058918140-29e4b48c893c?auto=format&fit=crop&w=1600&q=80')
-      center/cover no-repeat;
-    min-height: 52vh;
-    display: flex; align-items: flex-end;
-    box-shadow: var(--shadow);
-  }
-  .overlay { padding: 34px; color: white; }
-  .overlay h1 { margin: 0; font-size: 40px; }
-  .overlay p { margin-top: 8px; }
-
-  .pill {
-    display: inline-block;
-    background: rgba(0,0,0,0.35);
-    padding: 8px 12px; border-radius: 20px;
-    margin-right: 8px;
-    color: #fcefc3; font-size: 13px;
+  .hotel-row img{width:80px;height:80px;border-radius:12px;object-fit:cover;}
+  .hotel-tags{margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;}
+  .tag{
+    padding:2px 8px;border-radius:999px;background:rgba(212,166,81,.25);
+    border:1px solid rgba(212,166,81,.5);font-size:.75rem;
+    color:var(--accent-soft);
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 24px; margin-top: 20px;
+  .map-frame{
+    height:240px;border-radius:16px;margin-top:12px;
+    overflow:hidden;border:1px solid var(--border-soft);
   }
-  @media(max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  iframe{width:100%;height:100%;border:0;}
 
-  .card {
-    background: var(--card);
-    padding: 20px; border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 20px;
-  }
+  footer{text-align:center;color:var(--text-muted);margin-top:26px;font-size:.85rem;}
 
-  /* GALLERY */
-  .gallery {
-    display: grid; grid-template-columns: repeat(3,1fr);
-    gap: 10px;
-  }
-  @media(max-width: 700px) { .gallery { grid-template-columns: repeat(2,1fr); } }
-  .gallery img {
-    width: 100%; height: 150px; object-fit: cover;
-    border-radius: 12px; cursor: pointer;
-    box-shadow: var(--shadow);
-  }
-
-  /* ITINERARY */
-  .itinerary { display: flex; flex-direction: column; gap: 12px; }
-  .it-day {
-    background: #fbeeca;
-    border-left: 6px solid var(--accent);
-    padding: 12px; border-radius: 10px;
-  }
-  .it-day h4 { margin: 0 0 6px; color: var(--accent); }
-  .it-day p { margin: 0; color: var(--muted); }
-
-  /* HOTELS */
-  .hotel { display: flex; gap: 12px; margin-top: 10px; }
-  .hotel img {
-    width: 110px; height: 70px;
-    border-radius: 10px; object-fit: cover;
-  }
-  .hotel .hinfo h4 { margin: 0; }
-  .hotel .hinfo p { margin: 2px 0; color: var(--muted); font-size: 13px; }
-
-  .map { height: 220px; border-radius: 12px; overflow: hidden; }
-
-  footer {
-    margin-top: 30px; padding: 20px;
-    text-align: center; background: var(--sand);
-    border-radius: 12px; color: var(--text); font-weight: 600;
-  }
-
-  /* LIGHTBOX */
-  .lightbox {
-    position: fixed; inset: 0;
-    background: rgba(0,0,0,0.8);
-    display: none; align-items: center; justify-content: center;
-    padding: 20px; z-index: 9999;
-  }
-  .lightbox img {
-    max-width: 90%; max-height: 85%; border-radius: 10px;
-  }
-  .close-btn {
-    position: absolute; top: 24px; right: 24px;
-    font-size: 32px; color: white; cursor: pointer;
-  }
 </style>
 </head>
 
 <body>
 
-<div class="wrap">
-
-  <nav class="top">
-    <a href="index.html" class="brand">AdventureHub</a>
-    <div class="links">
-      <a href="ooty.html">Ooty</a>
-      <a href="kodaikanal.html">Kodaikanal</a>
-      <a href="munnar.html">Munnar</a>
-      <a href="coorg.html">Coorg</a>
-      <a href="nainital.html">Nainital</a>
-      <a href="mussoorie.html">Mussoorie</a>
-      <a href="jaisalmer.html" style="color:var(--accent)">Jaisalmer</a>
-    </div>
+<header>
+  <div class="logo">AdventureHub</div>
+  <nav>
+    <a class="active" href="jaisalmer-golden-desert-fort-safari.html">Jaisalmer</a>
   </nav>
+</header>
 
-  <header class="hero">
-    <div class="overlay">
-      <h1>Jaisalmer — The Golden Desert City</h1>
-      <p>Thar Desert safaris, golden fort views, camel rides & royal sandstone palaces.</p>
+<main class="page">
 
-      <div style="margin-top:12px;">
-        <span class="pill">Rajasthan</span>
-        <span class="pill">Best Time: Oct – Feb</span>
-        <span class="pill">Desert Safari • Fort • Havelis</span>
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1585750807510-95cf85b8e5af?auto=format&fit=crop&w=1200&q=70">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="pill">Premium Destination Guide</div>
+    <h1 class="hero-title">Jaisalmer — Golden Desert, Fort & Safari</h1>
+    <p class="hero-sub">Golden city vibes, camel safari, desert camps, forts & stunning sunsets.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Quick Overview</h2>
+  <p>Jaisalmer is known for its golden sand dunes, camel safari, royal fortresses & Rajasthani culture.</p>
+</section>
+
+<section class="section">
+  <h2>Top Places to Visit</h2>
+  <ul>
+    <li>Jaisalmer Fort</li>
+    <li>Patwon Ki Haveli</li>
+    <li>Sam Sand Dunes</li>
+    <li>Desert Safari (camel/jeep)</li>
+    <li>Kuldhara Village</li>
+    <li>Gadisar Lake</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1621263768892-eac191f85632?auto=format&w=800&q=60">
+    <img src="https://images.unsplash.com/photo-1576485301764-2a4e9c6dbd6e?auto=format&w=800&q=60">
+    <img src="https://images.unsplash.com/photo-1612712449822-d8da3bd6c7bd?auto=format&w=800&q=60">
+    <img src="https://images.unsplash.com/photo-1585751016316-1b9c8872c7ce?auto=format&w=800&q=60">
+  </div>
+</section>
+
+<section class="section">
+  <h2>3-Day Jaisalmer Itinerary</h2>
+  <div class="itinerary-grid">
+
+    <div class="day-card">
+      <div class="day-title">Day 1 — Fort & Havelis</div>
+      <p>Explore Jaisalmer Fort & Patwon Ki Haveli.</p>
+    </div>
+
+    <div class="day-card">
+      <div class="day-title">Day 2 — Desert Safari</div>
+      <p>Go to Sam Dunes, camel ride, jeep safari, camp night.</p>
+    </div>
+
+    <div class="day-card">
+      <div class="day-title">Day 3 — Kuldhara + Lake</div>
+      <p>Visit abandoned village & Gadisar Lake.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <h2>Best Hotels</h2>
+
+  <div class="hotel-row">
+    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format">
+    <div>
+      <h3>Suryagarh Palace</h3>
+      <p>Royal 5-star fortress hotel.</p>
+      <div class="hotel-tags">
+        <span class="tag">Luxury</span><span class="tag">Heritage</span>
       </div>
     </div>
-  </header>
+  </div>
 
-  <main class="grid">
-
-    <!-- LEFT -->
-    <section>
-
-      <article class="card">
-        <h2>Quick Overview</h2>
-        <p style="color:var(--muted);">
-          Jaisalmer is famous for its golden fort, desert dunes, camel rides,
-          and royal heritage havelis. A magical mix of history, culture, and sunsets.
-        </p>
-      </article>
-
-      <article class="card">
-        <h2>Photo Gallery</h2>
-        <div class="gallery">
-          <img src="https://images.unsplash.com/photo-1599058918140-29e4b48c893c?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1599058918140-29e4b48c893c?auto=format&fit=crop&w=1600&q=80">
-          <img src="https://images.unsplash.com/photo-1602848598694-41e4c218fd24?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1602848598694-41e4c218fd24?auto=format&fit=crop&w=1600&q=80">
-          <img src="https://images.unsplash.com/photo-1519996529931-28324d9f63f0?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1519996529931-28324d9f63f0?auto=format&fit=crop&w=1600&q=80">
-          <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80">
-          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80">
-          <img src="https://images.unsplash.com/photo-1580130381384-23824963c3b4?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1580130381384-23824963c3b4?auto=format&fit=crop&w=1600&q=80">
-        </div>
-      </article>
-
-      <article class="card">
-        <h2>3-Day Itinerary</h2>
-        <div class="itinerary">
-
-          <div class="it-day">
-            <h4>Day 1 — Jaisalmer Fort & Havelis</h4>
-            <p>Explore the historic Sonar Fort, Patwon Ki Haveli and local markets.</p>
-          </div>
-
-          <div class="it-day">
-            <h4>Day 2 — Thar Desert Safari</h4>
-            <p>Camel safari, jeep ride, sunset over dunes & dinner at desert camp.</p>
-          </div>
-
-          <div class="it-day">
-            <h4>Day 3 — Gadisar Lake & Shopping</h4>
-            <p>Boating at the lake, then shop for traditional Rajasthani crafts.</p>
-          </div>
-
-        </div>
-      </article>
-
-    </section>
-
-    <!-- RIGHT -->
-    <aside>
-
-      <div class="card">
-        <h3>Top Desert Camps & Hotels</h3>
-
-        <div class="hotel">
-          <img src="https://images.unsplash.com/photo-1615963244667-55ce7dd0e6f3?auto=format&fit=crop&w=400&q=60">
-          <div class="hinfo">
-            <h4>Rajputana Desert Camp</h4>
-            <p>Luxury tents & desert experience.</p>
-          </div>
-        </div>
-
-        <div class="hotel">
-          <img src="https://images.unsplash.com/photo-1544993721-2507b27c1b3f?auto=format&fit=crop&w=400&q=60">
-          <div class="hinfo">
-            <h4>Fort Rajwada</h4>
-            <p>Royal stay with palace vibe.</p>
-          </div>
-        </div>
-
-        <h3 style="margin-top:14px;">Map</h3>
-        <div class="map">
-          <iframe src="https://www.google.com/maps?q=Jaisalmer&output=embed"
-           width="100%" height="100%" style="border:0;"></iframe>
-        </div>
-
+  <div class="hotel-row">
+    <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format">
+    <div>
+      <h3>Desert Camps</h3>
+      <p>Premium tents at Sam Dunes.</p>
+      <div class="hotel-tags">
+        <span class="tag">Mid-range</span><span class="tag">Camp</span>
       </div>
+    </div>
+  </div>
 
-    </aside>
+  <div class="hotel-row">
+    <img src="https://images.unsplash.com/photo-1512914890250-353c97c9e7e2?auto=format">
+    <div>
+      <h3>Budget Stays</h3>
+      <p>Affordable options inside the fort.</p>
+      <div class="hotel-tags">
+        <span class="tag">Budget</span><span class="tag">Simple</span>
+      </div>
+    </div>
+  </div>
 
-  </main>
+</section>
 
-  <footer>
-    © 2025 AdventureHub — Created by Kaunain Fathima
-  </footer>
+<section class="section">
+  <h2>Map</h2>
+  <div class="map-frame">
+    <iframe src="https://www.google.com/maps?q=Jaisalmer&output=embed"></iframe>
+  </div>
+</section>
 
-</div>
+<footer>
+  © 2025 AdventureHub — Created by Kaunain Fathima · @kaunainfathima19
+</footer>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lb">
-  <span class="close-btn" id="lbclose">✕</span>
-  <img id="lbimg" src="">
-</div>
-
-<script>
-  const imgs = document.querySelectorAll('.gallery img');
-  const lb = document.getElementById('lb');
-  const lbimg = document.getElementById('lbimg');
-  const lbclose = document.getElementById('lbclose');
-
-  imgs.forEach(img => {
-    img.addEventListener('click', () => {
-      lbimg.src = img.dataset.large;
-      lb.style.display = 'flex';
-    });
-  });
-
-  lbclose.onclick = () => lb.style.display = 'none';
-  lb.onclick = e => { if (e.target === lb) lb.style.display = 'none'; };
-</script>
-
+</main>
 </body>
 </html>
