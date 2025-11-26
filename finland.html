@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Finland – Northern Lights & Lapland Magic | AdventureHub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg-main: #050509;
+    --bg-card: #111119;
+    --bg-soft: #181821;
+    --accent: #d4a651;
+    --accent-soft: #f5e2b4;
+    --text-main: #f5f5f5;
+    --text-muted: #bbbbc6;
+    --border-soft: #262637;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: radial-gradient(circle at top, #0f0b18 0%, #050509 45%);
+    font-family: "Poppins", sans-serif;
+    color: var(--text-main);
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* HEADER */
+  header {
+    position: sticky;
+    top: 0;
+    padding: 14px 20px;
+    background: rgba(5,5,9,0.94);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+  }
+
+  .logo { color: var(--accent); font-size: 1.2rem; font-weight: 700; }
+
+  nav a {
+    margin-left: 14px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  nav a.active { color: var(--accent-soft); }
+
+  .page {
+    max-width: 960px;
+    padding: 24px 16px 60px;
+    margin: auto;
+  }
+
+  /* HERO */
+  .hero {
+    height: 360px;
+    border-radius: 22px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 25px 55px rgba(0,0,0,0.7);
+  }
+
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(65%);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.9));
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 26px;
+    left: 18px;
+  }
+
+  .pill {
+    background: rgba(0,0,0,0.6);
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.15);
+    font-size: 0.75rem;
+    color: var(--accent-soft);
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    margin: 6px 0;
+    font-weight: 700;
+  }
+
+  .hero-sub {
+    max-width: 480px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  /* SECTION */
+  .section {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px solid var(--border-soft);
+    margin-bottom: 22px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+  }
+
+  .section h2 {
+    color: var(--accent-soft);
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+  }
+
+  .section p, .section li {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  /* GALLERY */
+  .gallery-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  @media(min-width:720px){
+    .gallery-grid { grid-template-columns: repeat(4,1fr); }
+  }
+
+  .gallery-grid img {
+    height: 130px;
+    width: 100%;
+    border-radius: 14px;
+    object-fit: cover;
+  }
+
+  /* ITINERARY */
+  .itinerary-grid {
+    display: grid;
+    gap: 12px;
+  }
+  @media(min-width:720px){
+    .itinerary-grid { grid-template-columns: repeat(3,1fr); }
+  }
+
+  .day-card {
+    background: var(--bg-soft);
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border-soft);
+  }
+
+  .day-title {
+    color: var(--accent-soft);
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  /* HOTELS */
+  .hotel-row {
+    display: flex;
+    gap: 10px;
+    background: var(--bg-soft);
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border-soft);
+    margin-bottom: 12px;
+  }
+
+  .hotel-row img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .hotel-tags {
+    margin-top: 4px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgba(212,166,81,0.25);
+    border: 1px solid rgba(212,166,81,0.5);
+    color: var(--accent-soft);
+    font-size: 0.75rem;
+  }
+
+  /* MAP */
+  .map-frame {
+    height: 240px;
+    margin-top: 12px;
+    border-radius: 16px;
+    border: 1px solid var(--border-soft);
+    overflow: hidden;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">AdventureHub</div>
+  <nav>
+    <a href="dubai-luxury-desert-city.html">Dubai</a>
+    <a href="canada-majestic-landscapes.html">Canada</a>
+    <a class="active" href="finland-northern-lights-lapland.html">Finland</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1200&q=70">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="pill">Premium Destination Guide</div>
+      <h1 class="hero-title">Finland — Northern Lights & Lapland Magic</h1>
+      <p class="hero-sub">Aurora skies, igloo hotels, snow forests, reindeer safaris & the dreamland of winter.</p>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section">
+    <h2>Quick Overview</h2>
+    <p>
+      Finland is one of the world’s best destinations for Northern Lights, especially in Lapland.
+      With snowy forests, glass igloos, Santa Village, frozen lakes and luxury winter stays,
+      it’s a fairytale winter trip.
+    </p>
+  </section>
+
+  <!-- TOP ATTRACTIONS -->
+  <section class="section">
+    <h2>Top Places to Visit</h2>
+    <ul>
+      <li>Lapland — Northern Lights & Igloo resorts</li>
+      <li>Rovaniemi — Santa Claus Village</li>
+      <li>Helsinki — Cathedral, markets & design district</li>
+      <li>Sauna Lakes — Finnish spa + ice dipping</li>
+      <li>Levi — Skiing & snow adventures</li>
+      <li>Frozen Waterfalls & Snow Forests</li>
+    </ul>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section">
+    <h2>Photo Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1508261303786-5c8f0dbf5b7e?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1543340900-92d01941f6d3?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1519681399212-816e1f0a2c0e?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1533652066993-38c8a38609d0?auto=format&fit=crop&w=800&q=60">
+    </div>
+  </section>
+
+  <!-- ITINERARY -->
+  <section class="section">
+    <h2>5-Day Finland Itinerary</h2>
+    <div class="itinerary-grid">
+
+      <div class="day-card">
+        <div class="day-title">Day 1 — Helsinki</div>
+        <p>Cathedral, Market Square, design district.</p>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Day 2 — Fly to Lapland</div>
+        <p>Rovaniemi, Santa Village, snow forests.</p>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Day 3 — Northern Lights</div>
+        <p>Aurora hunting tour + igloo stay.</p>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Day 4 — Husky & Reindeer Safari</div>
+        <p>Snow adventure day exploring the arctic.</p>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Day 5 — Ice Lakes + Sauna</div>
+        <p>Traditional Finnish spa + icy lake dip.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOTELS -->
+  <section class="section">
+    <h2>Top Hotels & Igloos</h2>
+
+    <div class="hotel-row">
+      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format">
+      <div>
+        <h3>Kakslauttanen Arctic Resort</h3>
+        <p>Glass igloos under the Northern Lights.</p>
+        <div class="hotel-tags">
+          <span class="tag">Luxury</span><span class="tag">Igloo</span><span class="tag">Couples</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hotel-row">
+      <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format">
+      <div>
+        <h3>Santa Claus Holiday Village</h3>
+        <p>Magical family experience in Rovaniemi.</p>
+        <div class="hotel-tags">
+          <span class="tag">Family</span><span class="tag">Mid-range</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hotel-row">
+      <img src="https://images.unsplash.com/photo-1512914890250-353c97c9e7e2?auto=format">
+      <div>
+        <h3>Budget Cabins & Hostels</h3>
+        <p>Warm wooden cabins for budget travellers.</p>
+        <div class="hotel-tags">
+          <span class="tag">Budget</span><span class="tag">Cabin</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- MAP -->
+  <section class="section">
+    <h2>Finland on Map</h2>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps?q=Finland&output=embed"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 AdventureHub – Created by Kaunain Fathima · @kaunainfathima19
+  </footer>
+
+</main>
+
+</body>
+</html>
