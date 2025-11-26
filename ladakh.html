@@ -1,161 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ladakh Travel Guide | AdventureHub</title>
+<meta charset="UTF-8" />
+<title>Ladakh – Mountains, Lakes & High Passes | AdventureHub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-        }
-
-        header {
-            background: url('https://images.unsplash.com/photo-1503332132010-d1b77a0095b0?auto=format&fit=crop&w=1400&q=80')
-            no-repeat center/cover;
-            height: 55vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 2px 2px 12px black;
-            font-size: 34px;
-            text-align: center;
-            padding: 10px;
-        }
-
-        .section {
-            max-width: 850px;
-            background: white;
-            margin: 20px auto;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 12px #ccc;
-        }
-
-        ul {
-            line-height: 1.7;
-        }
-
-        a {
-            text-decoration: none;
-            color: #0275d8;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        nav {
-            background: black;
-            padding: 12px;
-            text-align: center;
-        }
-
-        nav a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        nav a:hover {
-            color: #ffcc00;
-        }
-
-        .footer {
-            background: black;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
+<style>
+  :root{--bg-main:#050509;--bg-card:#111119;--bg-soft:#181821;--accent:#d4a651;--accent-soft:#f5e2b4;--text-main:#f5f5f5;--text-muted:#bbbbc6;--border-soft:#262637;}
+  body{margin:0;background:radial-gradient(circle at top,#0f0d15,#050509 45%);font-family:Poppins;color:var(--text-main);}
+  header{position:sticky;top:0;background:rgba(5,5,9,.94);padding:14px 20px;display:flex;justify-content:space-between;}
+  .logo{color:var(--accent);font-weight:700;}
+  nav a{color:var(--text-muted);margin-left:14px;}
+  nav a.active{color:var(--accent-soft);}
+  .page{max-width:960px;margin:auto;padding:24px 16px;}
+  .hero{height:360px;border-radius:22px;overflow:hidden;position:relative;margin-bottom:20px;}
+  .hero img{width:100%;height:100%;object-fit:cover;filter:brightness(60%);}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent,rgba(0,0,0,.85));}
+  .hero-content{position:absolute;bottom:26px;left:18px;}
+  .pill{background:rgba(0,0,0,.55);padding:4px 12px;border-radius:999px;}
+  .section{background:var(--bg-card);padding:20px;margin-bottom:22px;border-radius:18px;}
+  .gallery-grid{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);}
+  @media(min-width:720px){.gallery-grid{grid-template-columns:repeat(4,1fr);}}
+</style>
 </head>
 
 <body>
-
 <header>
-    🏔️ Ladakh – Land of High Passes
+  <div class="logo">AdventureHub</div>
+  <nav><a class="active">Ladakh</a></nav>
 </header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="manali.html">Manali</a>
-    <a href="kashmir.html">Kashmir</a>
-    <a href="shimla.html">Shimla</a>
-    <a href="auli.html">Auli</a>
-    <a href="gulmarg.html">Gulmarg</a>
-    <a href="ladakh.html">Ladakh</a>
-</nav>
+<main class="page">
 
-<div class="section">
-    <h2>📍 About Ladakh</h2>
-    <p>
-        Ladakh is one of India’s most dramatic winter destinations —  
-        famous for its frozen lakes, snow-covered valleys, monasteries,  
-        and adventurous winter treks like the Chadar Trek.
-    </p>
-</div>
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="pill">Premium</div>
+    <h1>Ladakh — Mountains, Passes & Crystal Lakes</h1>
+  </div>
+</section>
 
-<div class="section">
-    <h2>✨ Best Places to Visit</h2>
-    <ul>
-        <li>Pangong Lake – Frozen blue lake</li>
-        <li>Nubra Valley – Sand dunes + snow mountains</li>
-        <li>Magnetic Hill – Gravity-defying spot</li>
-        <li>Shanti Stupa – Peaceful viewpoint</li>
-        <li>Zanskar Valley – Frozen river trek</li>
-    </ul>
-</div>
+<section class="section">
+  <h2>Top Places</h2>
+  <ul>
+    <li>Pangong Lake</li>
+    <li>Nubra Valley</li>
+    <li>Khardung La Pass</li>
+    <li>Tso Moriri</li>
+    <li>Magnetic Hill</li>
+    <li>Leh Palace</li>
+  </ul>
+</section>
 
-<div class="section">
-    <h2>❄️ Best Time to Visit</h2>
-    <ul>
-        <li><b>December – February:</b> Snow, ice & frozen lakes</li>
-        <li><b>March – June:</b> Best for bike trips</li>
-    </ul>
-</div>
+<section class="section">
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1508264165352-258a6be8f084?auto=format">
+    <img src="https://images.unsplash.com/photo-1505739775338-1f3c0e54f3f9?auto=format">
+    <img src="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format">
+    <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format">
+  </div>
+</section>
 
-<div class="section">
-    <h2>🚗 How to Reach</h2>
-    <ul>
-        <li><b>By Air:</b> Leh Airport (main entry point)</li>
-        <li><b>By Road (Summer only):</b> Manali → Leh highway</li>
-        <li><b>By Road (Summer only):</b> Srinagar → Leh highway</li>
-    </ul>
-</div>
+<section class="section">
+  <h2>Itinerary</h2>
+  <p>Day 1 – Leh</p>
+  <p>Day 2 – Nubra</p>
+  <p>Day 3 – Pangong</p>
+  <p>Day 4 – Tso Moriri</p>
+</section>
 
-<div class="section">
-    <h2>🏨 Best Places to Stay</h2>
-    <ul>
-        <li>The Grand Dragon Ladakh</li>
-        <li>The Zen Ladakh</li>
-        <li>Himalayan Residency</li>
-        <li>Hotel Singge Palace</li>
-    </ul>
-</div>
+<section class="section">
+  <h2>Hotels</h2>
+  <p>Luxury tents, mountain cottages & boutique hotels.</p>
+</section>
 
-<div class="section">
-    <h2>🍲 Food to Try</h2>
-    <ul>
-        <li>Thukpa</li>
-        <li>Skyu</li>
-        <li>Butter Tea</li>
-        <li>Momos</li>
-    </ul>
-</div>
+<section class="section">
+  <h2>Map</h2>
+  <iframe style="width:100%;height:240px;border-radius:16px;border:1px solid #262637;" src="https://www.google.com/maps?q=Ladakh&output=embed"></iframe>
+</section>
 
-<div class="section">
-    <h2>🔗 Back to Home</h2>
-    <p><a href="index.html">← Go to AdventureHub Homepage</a></p>
-</div>
-
-<div class="footer">
-    © 2025 AdventureHub – Explore Fearlessly
-</div>
-
+</main>
 </body>
 </html>
