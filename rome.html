@@ -1,79 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Rome – History, Romance & Colosseum | AdventureHub</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rome – History & Architecture</title>
 <style>
-  :root{--bg:#050509;--card:#111119;--soft:#181821;--accent:#d4a651;--accent2:#f5e2b4;--t1:#fff;--t2:#bbb;--b:#262637;}
-  body{margin:0;background:radial-gradient(circle,#17151f,#050509);font-family:Poppins;color:var(--t1);}
-  header{position:sticky;top:0;padding:14px 20px;background:rgba(5,5,9,.92);display:flex;justify-content:space-between;backdrop-filter:blur(12px);}
-  .logo{color:var(--accent);font-weight:700;}
-  nav a{color:var(--t2);margin-left:14px;}
-  nav a.active{color:var(--accent2);}
-  .page{max-width:960px;margin:auto;padding:20px;}
-  .hero{height:370px;border-radius:22px;overflow:hidden;position:relative;margin-bottom:20px;}
-  .hero img{width:100%;height:100%;object-fit:cover;filter:brightness(60%);}
-  .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent,#000);}
-  .hero-content{position:absolute;left:18px;bottom:28px;}
-  .pill{padding:4px 12px;background:rgba(0,0,0,.55);border-radius:999px;color:var(--accent2);}
-  .section{background:var(--card);margin-top:20px;padding:20px;border-radius:18px;border:1px solid var(--b);}
-  h2{color:var(--accent2);}
-  ul{padding-left:20px;color:var(--t2);}
-  .gallery-grid{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);}
-  @media(min-width:720px){.gallery-grid{grid-template-columns:repeat(4,1fr);} }
-  .gallery-grid img{height:130px;width:100%;object-fit:cover;border-radius:14px;}
-  .map-frame{margin-top:12px;height:240px;border-radius:16px;overflow:hidden;border:1px solid var(--b);}
+ body { background:#10101f; color:white; font-family:Arial; margin:0; }
+ .section { padding:20px; background:#19192b; margin:20px; border-radius:18px; }
+ h1 { color:#ffe7b2; }
 </style>
 </head>
-
 <body>
-<header>
-  <div class="logo">AdventureHub</div>
-  <nav><a class="active">Rome</a></nav>
-</header>
 
-<main class="page">
+<nav style="display:flex; justify-content:space-between; align-items:center; padding:20px; font-size:18px;">
+ <a href="index.html" style="font-weight:bold; color:#f7d57e; font-size:22px; text-decoration:none;">AdventureHub</a>
+ <div style="display:flex; gap:20px;">
+   <a href="manali.html" style="color:white;">Manali</a>
+   <a href="shimla.html" style="color:white;">Shimla</a>
+   <a href="nainital.html" style="color:white;">Nainital</a>
+   <a href="kashmir.html" style="color:white;">Kashmir</a>
+   <a href="andaman.html" style="color:white;">Andaman</a>
+ </div>
+</nav>
 
-<div class="hero">
-  <img src="https://images.unsplash.com/photo-1504973960431-7f75345a5fa3?auto=format" />
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="pill">Premium Destination</div>
-    <h1>Rome — History, Romance & Colosseum</h1>
-  </div>
+<div class="section">
+<h1>Rome — Colosseum, Vatican & Ancient Glory</h1>
+<p>Historic ruins, Roman architecture, art museums & old streets.</p>
 </div>
 
-<section class="section">
-  <h2>Top Attractions</h2>
-  <ul>
-    <li>Colosseum</li>
-    <li>Trevi Fountain</li>
-    <li>Vatican City</li>
-    <li>Roman Forum</li>
-    <li>Spanish Steps</li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>Gallery</h2>
-  <div class="gallery-grid">
-    <img src="https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format">
-    <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0ea?auto=format">
-    <img src="https://images.unsplash.com/photo-1549640376-19509d298d0f?auto=format">
-    <img src="https://images.unsplash.com/photo-1490357531759-ded5b43fa319?auto=format">
-  </div>
-</section>
-
-<section class="section">
-  <h2>Map</h2>
-  <div class="map-frame">
-    <iframe src="https://www.google.com/maps?q=Rome&output=embed"></iframe>
-  </div>
-</section>
-
-</main>
 </body>
 </html>
