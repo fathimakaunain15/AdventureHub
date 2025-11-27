@@ -1,452 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>AdventureHub – Premium World Travel Guides</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdventureHub – Premium Nature & Travel Guides</title>
 
-<style>
-  :root {
-    --bg: #050509;
-    --card: #111119;
-    --soft: #181821;
-    --accent: #d4a651;
-    --accent2: #f5e2b4;
-    --t1: #fff;
-    --t2: #bdbdc6;
-    --border: #262637;
-  }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  * { box-sizing: border-box; }
+  <style>
+    :root {
+      --bg: #04130d;
+      --bg-soft: #071c12;
+      --card: #0d2617;
+      --card-soft: #123323;
+      --accent: #7bd88f;
+      --accent-soft: rgba(123, 216, 143, 0.14);
+      --text-main: #f7fff9;
+      --text-soft: #cce7d5;
+      --border-soft: rgba(255, 255, 255, 0.06);
+    }
 
-  body {
-    margin: 0;
-    background: radial-gradient(circle at top, #1b1924, var(--bg) 55%);
-    font-family: Poppins, sans-serif;
-    color: var(--t1);
-  }
+    * { box-sizing: border-box; }
 
-  header {
-    position: sticky;
-    top: 0;
-    padding: 16px 22px;
-    background: rgba(5,5,9,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    display: flex;
-    justify-content: space-between;
-  }
+    body {
+      margin: 0;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top left, #0b2a19, #020807);
+      color: var(--text-main);
+    }
 
-  .logo {
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: var(--accent);
-  }
+    a { text-decoration: none; color: inherit; }
 
-  /* HERO */
-  .hero {
-    height: 300px;
-    border-radius: 22px;
-    overflow: hidden;
-    position: relative;
-    margin: 18px;
-  }
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 16px 40px;
+    }
 
-  .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(55%);
-  }
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
 
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.85));
-  }
+    .brand {
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0.03em;
+      color: var(--accent);
+    }
 
-  .hero-content {
-    position: absolute;
-    bottom: 26px;
-    left: 20px;
-  }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+    }
 
-  .hero-title {
-    font-size: 2rem;
-    margin: 0;
-    color: var(--accent2);
-    font-weight: 700;
-  }
+    .nav-links a {
+      opacity: 0.9;
+    }
 
-  .subtitle {
-    margin-top: 6px;
-    color: var(--t2);
-    font-size: .95rem;
-  }
+    .nav-links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
 
-  /* SEARCH */
-  .search-box {
-    width: 90%;
-    max-width: 650px;
-    margin: 20px auto;
-    display: block;
-    padding: 12px 18px;
-    background: var(--soft);
-    border-radius: 14px;
-    border: 1px solid var(--border);
-    color: var(--t1);
-    font-size: 1rem;
-  }
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, rgba(7, 58, 32, 0.9), rgba(9, 31, 21, 0.98));
+      border-radius: 20px;
+      padding: 22px 18px 20px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+      margin-bottom: 22px;
+    }
 
-  /* SECTIONS */
-  .section-title {
-    margin: 30px 18px 10px;
-    font-size: 1.4rem;
-    color: var(--accent2);
-  }
+    .hero-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 0 6px;
+    }
 
-  .grid {
-    margin: 0 18px 28px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
-    gap: 16px;
-  }
+    .hero-sub {
+      font-size: 14px;
+      color: var(--text-soft);
+      margin-bottom: 14px;
+    }
 
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    overflow: hidden;
-    text-decoration: none;
-    color: var(--t1);
-    transition: .3s;
-  }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
 
-  .card:hover {
-    transform: translateY(-6px);
-  }
+    .pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(123,216,143,0.3);
+    }
 
-  .card img {
-    width: 100%;
-    height: 130px;
-    object-fit: cover;
-    filter: brightness(75%);
-  }
+    /* SECTION HEADINGS */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 24px 2px 8px;
+    }
 
-  .card h3 {
-    font-size: 1.05rem;
-    margin: 12px;
-    color: var(--accent2);
-  }
+    .section-header h2 {
+      font-size: 18px;
+      margin: 0;
+    }
 
-  .card p {
-    margin: 0 12px 14px;
-    font-size: .85rem;
-    color: var(--t2);
-  }
+    .section-header span {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
 
-  footer {
-    text-align: center;
-    padding: 24px 0;
-    color: var(--t2);
-    font-size: .85rem;
-  }
-</style>
+    /* CARDS GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 12px 12px 14px;
+      border: 1px solid var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(123,216,143,0.18), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-meta {
+      font-size: 11px;
+      color: var(--text-soft);
+      position: relative;
+      z-index: 1;
+    }
+
+    .tag-small {
+      display: inline-block;
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.3);
+      color: var(--accent);
+      border: 1px solid rgba(123,216,143,0.5);
+      position: relative;
+      z-index: 1;
+      margin-top: 4px;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.7);
+      transition: all 0.18s ease-out;
+      border-color: rgba(123,216,143,0.45);
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 26px;
+      font-size: 11px;
+      color: var(--text-soft);
+      text-align: center;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 640px) {
+      .hero-title { font-size: 22px; }
+      .nav-links { gap: 10px; font-size: 12px; }
+      .page { padding-inline: 14px; }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="page">
 
-<header>
-  <div class="logo">AdventureHub</div>
-</header>
+    <!-- NAVBAR -->
+    <nav>
+      <a href="index.html" class="brand">AdventureHub</a>
+      <div class="nav-links">
+        <a href="manali.html">Manali</a>
+        <a href="kashmir.html">Kashmir</a>
+        <a href="andaman.html">Andaman</a>
+        <a href="switzerland.html">Switzerland</a>
+      </div>
+    </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=70">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1 class="hero-title">Explore Premium Destinations</h1>
-    <p class="subtitle">Handcrafted luxury travel guides by Kaunain Fathima</p>
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="hero-title">Premium Nature & Adventure Guides</h1>
+      <p class="hero-sub">
+        Handcrafted itineraries, hotel suggestions and travel tips for hill stations,
+        islands, honeymoon spots and bucket-list adventures – all in one place.
+      </p>
+      <div class="hero-tags">
+        <span class="pill">Hill Stations</span>
+        <span class="pill">Honeymoons</span>
+        <span class="pill">Islands</span>
+        <span class="pill">International Trips</span>
+      </div>
+    </section>
+
+    <!-- FEATURED PREMIUM DESTINATIONS -->
+    <div class="section-header">
+      <h2>Featured Premium Guides</h2>
+      <span>Start here for top experiences</span>
+    </div>
+
+    <section class="grid">
+      <a class="card" href="manali.html">
+        <div class="card-title">Manali – Snow Paradise</div>
+        <div class="card-meta">Solang Valley, Rohtang, cafés & snow adventures.</div>
+        <span class="tag-small">India • 4–5 Days</span>
+      </a>
+
+      <a class="card" href="kashmir.html">
+        <div class="card-title">Kashmir – Heaven on Earth</div>
+        <div class="card-meta">Gulmarg, Pahalgam, Dal Lake & snowy peaks.</div>
+        <span class="tag-small">India • 5–7 Days</span>
+      </a>
+
+      <a class="card" href="andaman.html">
+        <div class="card-title">Andaman – Turquoise Islands</div>
+        <div class="card-meta">Radhanagar, Havelock, scuba & sunsets.</div>
+        <span class="tag-small">India • 4–6 Days</span>
+      </a>
+
+      <a class="card" href="switzerland.html">
+        <div class="card-title">Switzerland – Alps & Lakes</div>
+        <div class="card-meta">Interlaken, Lucerne, scenic trains & snow.</div>
+        <span class="tag-small">Europe • 7–9 Days</span>
+      </a>
+    </section>
+
+    <!-- ALL DESTINATIONS LIST -->
+    <div class="section-header">
+      <h2>All Premium Destinations</h2>
+      <span>Tap to open full guide</span>
+    </div>
+
+    <section class="grid">
+      <!-- India Hills -->
+      <a class="card" href="shimla.html"><div class="card-title">Shimla – Queen of Hills</div><div class="card-meta">Snow, Mall Road & pine forests.</div></a>
+      <a class="card" href="nainital.html"><div class="card-title">Nainital – City of Lakes</div><div class="card-meta">Boating, viewpoints & cool weather.</div></a>
+      <a class="card" href="mussoorie.html"><div class="card-title">Mussoorie – Hill Station</div><div class="card-meta">Kempty Falls, Mall Road & clouds.</div></a>
+      <a class="card" href="ooty.html"><div class="card-title">Ooty – Nilgiri Hills</div><div class="card-meta">Tea gardens, lakes & toy train.</div></a>
+      <a class="card" href="kodaikanal.html"><div class="card-title">Kodaikanal – Forest Retreat</div><div class="card-meta">Kodai lake, pine forests & mist.</div></a>
+      <a class="card" href="munnar.html"><div class="card-title">Munnar – Tea Hills</div><div class="card-meta">Tea estates, valleys & waterfalls.</div></a>
+      <a class="card" href="coorg.html"><div class="card-title">Coorg – Coffee Country</div><div class="card-meta">Plantations, waterfalls & nature.</div></a>
+      <a class="card" href="auli.html"><div class="card-title">Auli – Ski Destination</div><div class="card-meta">Ski slopes & snow peaks.</div></a>
+      <a class="card" href="gulmarg.html"><div class="card-title">Gulmarg – Ski Slopes</div><div class="card-meta">Gondola, ski & deep snow.</div></a>
+      <a class="card" href="meghalaya.html"><div class="card-title">Meghalaya – Abode of Clouds</div><div class="card-meta">Waterfalls & living root bridges.</div></a>
+
+      <!-- India Desert / Culture -->
+      <a class="card" href="jaipur.html"><div class="card-title">Jaipur – Pink City</div><div class="card-meta">Palaces, forts & markets.</div></a>
+      <a class="card" href="jaisalmer.html"><div class="card-title">Jaisalmer – Golden Desert</div><div class="card-meta">Sam dunes & camel safari.</div></a>
+      <a class="card" href="jodhpur.html"><div class="card-title">Jodhpur – Blue City</div><div class="card-meta">Mehrangarh Fort & blue lanes.</div></a>
+
+      <!-- India Islands / Beaches -->
+      <a class="card" href="andaman.html"><div class="card-title">Andaman – Island Escape</div><div class="card-meta">Beaches, scuba & sunsets.</div></a>
+      <a class="card" href="goa.html"><div class="card-title">Goa – Beaches & Nightlife</div><div class="card-meta">Shacks, parties & sunsets.</div></a>
+      <a class="card" href="lakshadweep.html"><div class="card-title">Lakshadweep – Blue Lagoons</div><div class="card-meta">Coral islands & clear water.</div></a>
+
+      <!-- International Islands -->
+      <a class="card" href="maldives.html"><div class="card-title">Maldives – Water Villas</div><div class="card-meta">Honeymoon overwater stay.</div></a>
+      <a class="card" href="mauritius.html"><div class="card-title">Mauritius – Island Paradise</div><div class="card-meta">Beaches, lagoons & reefs.</div></a>
+      <a class="card" href="bali.html"><div class="card-title">Bali – Temples & Beaches</div><div class="card-meta">Waterfalls, rice fields & cafés.</div></a>
+      <a class="card" href="thailand.html"><div class="card-title">Thailand – Islands & Temples</div><div class="card-meta">Phuket, Krabi & Bangkok.</div></a>
+      <a class="card" href="santorini.html"><div class="card-title">Santorini – Blue Domes</div><div class="card-meta">Sunsets & white houses.</div></a>
+      <a class="card" href="seychelles.html"><div class="card-title">Seychelles – Romantic Islands</div><div class="card-meta">Beaches & luxury resorts.</div></a>
+
+      <!-- International Cities -->
+      <a class="card" href="newyork.html"><div class="card-title">New York – Skyline City</div><div class="card-meta">Times Square & Central Park.</div></a>
+      <a class="card" href="london.html"><div class="card-title">London – Royal City</div><div class="card-meta">Thames, Big Ben & palaces.</div></a>
+      <a class="card" href="paris.html"><div class="card-title">Paris – City of Love</div><div class="card-meta">Eiffel Tower & cafés.</div></a>
+      <a class="card" href="rome.html"><div class="card-title">Rome – Ancient Wonders</div><div class="card-meta">Colosseum & Vatican.</div></a>
+      <a class="card" href="tokyo.html"><div class="card-title">Tokyo – Neon & Anime</div><div class="card-meta">Shibuya & Akihabara.</div></a>
+      <a class="card" href="singapore.html"><div class="card-title">Singapore – Futuristic City</div><div class="card-meta">Marina Bay & Sentosa.</div></a>
+      <a class="card" href="dubai.html"><div class="card-title">Dubai – Luxury Desert City</div><div class="card-meta">Burj Khalifa & malls.</div></a>
+
+      <!-- International Nature -->
+      <a class="card" href="switzerland.html"><div class="card-title">Switzerland – Alps & Lakes</div><div class="card-meta">Snow, trains & valleys.</div></a>
+      <a class="card" href="zermatt.html"><div class="card-title">Zermatt – Matterhorn</div><div class="card-meta">Skiing & alpine village.</div></a>
+      <a class="card" href="canada.html"><div class="card-title">Canada – Lakes & Mountains</div><div class="card-meta">Banff, Niagara & Rockies.</div></a>
+      <a class="card" href="finland.html"><div class="card-title">Finland – Northern Lights</div><div class="card-meta">Igloos & aurora.</div></a>
+      <a class="card" href="norway.html"><div class="card-title">Norway – Fjords</div><div class="card-meta">Fjords & northern lights.</div></a>
+      <a class="card" href="iceland.html"><div class="card-title">Iceland – Fire & Ice</div><div class="card-meta">Waterfalls & glaciers.</div></a>
+      <a class="card" href="newzealand.html"><div class="card-title">New Zealand – Adventure</div><div class="card-meta">Mountains & lakes.</div></a>
+      <a class="card" href="turkey.html"><div class="card-title">Turkey – History & Balloons</div><div class="card-meta">Istanbul & Cappadocia.</div></a>
+      <a class="card" href="nice.html"><div class="card-title">Nice – French Riviera</div><div class="card-meta">Coastline & promenades.</div></a>
+    </section>
+
+    <footer>
+      © 2025 AdventureHub — Created by Kaunain Fathima • Follow @kaunainfathima19
+    </footer>
+
   </div>
-</section>
-
-<!-- SEARCH (just visual for now) -->
-<input type="text" class="search-box" placeholder="Search destinations… (e.g., Bali, Switzerland, Kashmir)" />
-
-<!-- INDIA -->
-<h2 class="section-title">India Destinations</h2>
-<div class="grid">
-
-  <a href="andaman.html" class="card">
-    <img src="https://images.unsplash.com/photo-1505739775338-1f3c0e54f3f9?auto=format">
-    <h3>Andaman</h3>
-    <p>Turquoise water & white sand beaches.</p>
-  </a>
-
-  <a href="auli.html" class="card">
-    <img src="https://images.unsplash.com/photo-1519817650390-64a93db511aa?auto=format">
-    <h3>Auli</h3>
-    <p>Snowy slopes & skiing adventures.</p>
-  </a>
-
-  <a href="coorg.html" class="card">
-    <img src="https://images.unsplash.com/photo-1494499031632-6235cba57f9a?auto=format">
-    <h3>Coorg</h3>
-    <p>Coffee plantations & misty hills.</p>
-  </a>
-
-  <a href="goa.html" class="card">
-    <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format">
-    <h3>Goa</h3>
-    <p>Beaches, nightlife & shacks.</p>
-  </a>
-
-  <a href="gulmarg.html" class="card">
-    <img src="https://images.unsplash.com/photo-1543352632-39e4c837a2e0?auto=format">
-    <h3>Gulmarg</h3>
-    <p>Snow, gondola rides & ski slopes.</p>
-  </a>
-
-  <a href="iceland.html" class="card">
-    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format">
-    <h3>Iceland (India page name)</h3>
-    <p>Glaciers, waterfalls & hot springs.</p>
-  </a>
-
-  <a href="jaipur.html" class="card">
-    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format">
-    <h3>Jaipur</h3>
-    <p>Pink city palaces & forts.</p>
-  </a>
-
-  <a href="jaisalmer.html" class="card">
-    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format">
-    <h3>Jaisalmer</h3>
-    <p>Golden desert, dunes & fort.</p>
-  </a>
-
-  <a href="jodhpur.html" class="card">
-    <img src="https://images.unsplash.com/photo-1602080751135-e93f5135c3c8?auto=format">
-    <h3>Jodhpur</h3>
-    <p>Blue city & Mehrangarh fort.</p>
-  </a>
-
-  <a href="kashmir.html" class="card">
-    <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format">
-    <h3>Kashmir</h3>
-    <p>Heavenly valleys & lakes.</p>
-  </a>
-
-  <a href="kodaikanal.html" class="card">
-    <img src="https://images.unsplash.com/photo-1597005367599-5ef3fd9a93b5?auto=format">
-    <h3>Kodaikanal</h3>
-    <p>Misty forests & Kodai lake.</p>
-  </a>
-
-  <a href="ladakh.html" class="card">
-    <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format">
-    <h3>Ladakh</h3>
-    <p>High passes & crystal lakes.</p>
-  </a>
-
-  <a href="lakshadweep.html" class="card">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format">
-    <h3>Lakshadweep</h3>
-    <p>Turquoise islands & reefs.</p>
-  </a>
-
-  <a href="manali.html" class="card">
-    <img src="https://images.unsplash.com/photo-1548423940-b61e87e4a4bd?auto=format">
-    <h3>Manali</h3>
-    <p>Snowy peaks & adventure sports.</p>
-  </a>
-
-  <a href="meghalaya.html" class="card">
-    <img src="https://images.unsplash.com/photo-1589308078055-0c3e7ca3d42c?auto=format">
-    <h3>Meghalaya</h3>
-    <p>Clouds, caves & waterfalls.</p>
-  </a>
-
-  <a href="munnar.html" class="card">
-    <img src="https://images.unsplash.com/photo-1566576912328-3f6c64e5a2c1?auto=format">
-    <h3>Munnar</h3>
-    <p>Tea gardens & misty hills.</p>
-  </a>
-
-  <a href="mussoorie.html" class="card">
-    <img src="https://images.unsplash.com/photo-1584452964988-1f21d0ec098b?auto=format">
-    <h3>Mussoorie</h3>
-    <p>Queen of hills & views.</p>
-  </a>
-
-  <a href="nainital.html" class="card">
-    <img src="https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?auto=format">
-    <h3>Nainital</h3>
-    <p>Lake views & cool weather.</p>
-  </a>
-
-  <a href="ooty.html" class="card">
-    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9eb60?auto=format">
-    <h3>Ooty</h3>
-    <p>Botanical gardens & lake.</p>
-  </a>
-
-  <a href="shimla.html" class="card">
-    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format">
-    <h3>Shimla</h3>
-    <p>Queen of hills & mall road.</p>
-  </a>
-
-  <a href="sikkim.html" class="card">
-    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format">
-    <h3>Sikkim</h3>
-    <p>Snow peaks & Tsomgo lake.</p>
-  </a>
-
-</div>
-
-<!-- INTERNATIONAL -->
-<h2 class="section-title">International Destinations</h2>
-<div class="grid">
-
-  <a href="bali.html" class="card">
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format">
-    <h3>Bali</h3>
-    <p>Temples, beaches & rice terraces.</p>
-  </a>
-
-  <a href="canada.html" class="card">
-    <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format">
-    <h3>Canada</h3>
-    <p>Lakes, forests & mountains.</p>
-  </a>
-
-  <a href="dubai.html" class="card">
-    <img src="https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?auto=format">
-    <h3>Dubai</h3>
-    <p>Skyscrapers, malls & desert safari.</p>
-  </a>
-
-  <a href="finland.html" class="card">
-    <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format">
-    <h3>Finland</h3>
-    <p>Northern lights & glass igloos.</p>
-  </a>
-
-  <a href="iceland.html" class="card">
-    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format">
-    <h3>Iceland</h3>
-    <p>Glaciers, geysers & waterfalls.</p>
-  </a>
-
-  <a href="london.html" class="card">
-    <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format">
-    <h3>London</h3>
-    <p>Royal landmarks & Thames river.</p>
-  </a>
-
-  <a href="maldives.html" class="card">
-    <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format">
-    <h3>Maldives</h3>
-    <p>Overwater villas & lagoons.</p>
-  </a>
-
-  <a href="mauritius.html" class="card">
-    <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format">
-    <h3>Mauritius</h3>
-    <p>Blue lagoons & coral reefs.</p>
-  </a>
-
-  <a href="newyork.html" class="card">
-    <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format">
-    <h3>New York</h3>
-    <p>City that never sleeps.</p>
-  </a>
-
-  <a href="newzealand.html" class="card">
-    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format">
-    <h3>New Zealand</h3>
-    <p>Adventure & scenic drives.</p>
-  </a>
-
-  <a href="nice.html" class="card">
-    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format">
-    <h3>Nice</h3>
-    <p>French Riviera seaside elegance.</p>
-  </a>
-
-  <a href="norway.html" class="card">
-    <img src="https://images.unsplash.com/photo-1508264165352-258a6be8f084?auto=format">
-    <h3>Norway</h3>
-    <p>Fjords, mountains & auroras.</p>
-  </a>
-
-  <a href="paris.html" class="card">
-    <img src="https://images.unsplash.com/photo-1522098543979-ffc7f79d5aff?auto=format">
-    <h3>Paris</h3>
-    <p>Eiffel Tower, art & romance.</p>
-  </a>
-
-  <a href="rome.html" class="card">
-    <img src="https://images.unsplash.com/photo-1504973960431-7f75345a5fa3?auto=format">
-    <h3>Rome</h3>
-    <p>Colosseum, Vatican & history.</p>
-  </a>
-
-  <a href="santorini.html" class="card">
-    <img src="https://images.unsplash.com/photo-1506176671240-22980140a405?auto=format">
-    <h3>Santorini</h3>
-    <p>White & blue cliff villages.</p>
-  </a>
-
-  <a href="seychelles.html" class="card">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format">
-    <h3>Seychelles</h3>
-    <p>Tropical island luxury.</p>
-  </a>
-
-  <a href="singapore.html" class="card">
-    <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format">
-    <h3>Singapore</h3>
-    <p>Futuristic skyline & gardens.</p>
-  </a>
-
-  <a href="switzerland.html" class="card">
-    <img src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?auto=format">
-    <h3>Switzerland</h3>
-    <p>Alps, lakes & chocolate.</p>
-  </a>
-
-  <a href="thailand.html" class="card">
-    <img src="https://images.unsplash.com/photo-1508264165352-258a6be8f084?auto=format">
-    <h3>Thailand</h3>
-    <p>Beaches, temples & nightlife.</p>
-  </a>
-
-  <a href="tokyo.html" class="card">
-    <img src="https://images.unsplash.com/photo-1505068999540-7f2c76324f56?auto=format">
-    <h3>Tokyo</h3>
-    <p>Anime, neon & modern Japan.</p>
-  </a>
-
-  <a href="turkey.html" class="card">
-    <img src="https://images.unsplash.com/photo-1531219432768-9f540ce91ef3?auto=format">
-    <h3>Turkey</h3>
-    <p>Istanbul & Cappadocia balloons.</p>
-  </a>
-
-  <a href="zermatt.html" class="card">
-    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format">
-    <h3>Zermatt</h3>
-    <p>Matterhorn & Swiss Alps.</p>
-  </a>
-
-</div>
-
-<footer>
-  © 2025 AdventureHub · Designed by <b>Kaunain Fathima</b> · @kaunainfathima19
-</footer>
-
 </body>
 </html>
