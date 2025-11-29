@@ -2,31 +2,219 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Paris – City of Love</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paris – Eiffel Tower & Romance | Premium Guide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
- body { background:#121222; color:white; font-family:Arial; margin:0; }
- .section { padding:20px; background:#1c1c2d; margin:20px; border-radius:18px; }
- h1 { color:#ffd4e6; }
+:root{
+  --bg:#04130d;
+  --card:#0d2617;
+  --card-soft:#123323;
+  --accent:#7bd88f;
+  --accent-soft:rgba(123,216,143,.18);
+  --text-main:#f7fff9;
+  --text-soft:#cce7d5;
+  --border-soft:rgba(255,255,255,.06);
+}
+
+body{
+  margin:0;
+  background:radial-gradient(circle at top left,#0b2a19,#020807);
+  color:var(--text-main);
+  font-family:"Poppins",sans-serif;
+}
+
+.page{max-width:1100px;margin:auto;padding:18px 16px;}
+
+.section{
+  background:var(--card);
+  border-radius:20px;
+  padding:18px;
+  border:1px solid var(--border-soft);
+  margin-bottom:18px;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
+
+a{text-decoration:none;color:inherit;}
+
+.brand{font-size:22px;font-weight:700;color:var(--accent);}
+.nav-links{display:flex;gap:18px;}
+
+.hero{position:relative;padding:20px;}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at top,rgba(123,216,143,.26),transparent 55%);
+  opacity:.95;
+}
+.hero-inner{position:relative;z-index:1;}
+
+h1{font-size:26px;margin:0 0 6px;}
+p{font-size:14px;color:var(--text-soft);}
+
+.pill{
+  padding:6px 10px;
+  background:var(--accent-soft);
+  font-size:11px;
+  border-radius:999px;
+  color:var(--accent);
+  margin-right:6px;
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:14px;
+}
+
+@media(max-width:720px){
+  .split{grid-template-columns:1fr;}
+  h1{font-size:22px;}
+}
+
+ul{padding-left:18px;}
+li{font-size:14px;color:var(--text-soft);margin-bottom:4px;}
+
+.hotel{
+  padding:10px;
+  border-radius:14px;
+  background:var(--card-soft);
+  margin-bottom:8px;
+  border:1px solid rgba(255,255,255,.05);
+}
+
+footer{
+  text-align:center;
+  color:var(--text-soft);
+  opacity:.7;
+  font-size:11px;
+  margin-top:22px;
+}
 </style>
 </head>
-<body>
 
-<nav style="display:flex; justify-content:space-between; align-items:center; padding:20px; font-size:18px;">
- <a href="index.html" style="font-weight:bold; color:#f7d57e; font-size:22px; text-decoration:none;">AdventureHub</a>
- <div style="display:flex; gap:20px;">
-   <a href="manali.html" style="color:white;">Manali</a>
-   <a href="shimla.html" style="color:white;">Shimla</a>
-   <a href="nainital.html" style="color:white;">Nainital</a>
-   <a href="kashmir.html" style="color:white;">Kashmir</a>
-   <a href="andaman.html" style="color:white;">Andaman</a>
- </div>
+<body>
+<div class="page">
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="brand">AdventureHub</a>
+  <div class="nav-links">
+     <a href="manali.html">Manali</a>
+     <a href="shimla.html">Shimla</a>
+     <a href="nainital.html">Nainital</a>
+     <a href="kashmir.html">Kashmir</a>
+     <a href="andaman.html">Andaman</a>
+  </div>
 </nav>
 
-<div class="section">
-<h1>Paris — Romance, Art & Eiffel Tower</h1>
-<p>Eiffel Tower, Louvre, Seine River, cafés, fashion & city lights.</p>
-</div>
+<!-- HERO -->
+<section class="section hero">
+  <div class="hero-inner">
+    <span class="pill">Premium Guide</span>
+    <h1>Paris — City of Love & Lights</h1>
+    <p>
+      Eiffel Tower, romantic streets, luxury cafes, fashion, art museums,
+      night cruises & dreamy views — Paris is pure magic.
+    </p>
 
+    <span class="pill">Best Time: April–October</span>
+    <span class="pill">Perfect For: Couples • Luxury • Photography</span>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section split">
+  <div>
+    <h2>Overview</h2>
+    <p>
+      Paris is the fashion capital of the world — filled with historic architecture,
+      moonlit bridges, art galleries, designer streets & beautiful cafes.
+    </p>
+    <ul>
+      <li>Country: France</li>
+      <li>Known For: Eiffel Tower, Louvre, cafés</li>
+      <li>Vibe: Romantic + Aesthetic + Classy</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Budget (Per Day)</h2>
+    <ul>
+      <li>Budget: ₹7k–12k</li>
+      <li>Comfort: ₹15k–20k</li>
+      <li>Luxury: ₹25k+</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PLACES -->
+<section class="section split">
+  <div>
+    <h2>Top Places to Visit</h2>
+    <ul>
+      <li>Eiffel Tower</li>
+      <li>Louvre Museum</li>
+      <li>Champs-Élysées</li>
+      <li>Notre-Dame Cathedral</li>
+      <li>Sacré-Cœur</li>
+      <li>Seine River</li>
+      <li>Montmartre</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Activities</h2>
+    <ul>
+      <li>🌙 Seine River Night Cruise</li>
+      <li>📸 Eiffel Tower photoshoot</li>
+      <li>🍰 French café date</li>
+      <li>👜 Luxury shopping</li>
+      <li>🎨 Museum tours</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="section">
+  <h2>2–3 Day Itinerary</h2>
+  <ul>
+    <li><b>Day 1:</b> Eiffel Tower → Seine River cruise → Dinner</li>
+    <li><b>Day 2:</b> Louvre → Champs-Élysées → Shopping</li>
+    <li><b>Day 3:</b> Montmartre → Basilica → Café hopping</li>
+  </ul>
+</section>
+
+<!-- HOTELS -->
+<section class="section split">
+  <div>
+    <h2>Best Hotels</h2>
+    <div class="hotel"><b>Shangri-La Paris</b> — Eiffel Tower view</div>
+    <div class="hotel"><b>Le Meurice</b> — Luxury stay</div>
+    <div class="hotel"><b>Hôtel Eiffel Seine</b> — Perfect budget option</div>
+    <div class="hotel"><b>Hostels</b> — Cheap stays</div>
+  </div>
+
+  <div>
+    <h2>How to Reach</h2>
+    <ul>
+      <li>Airport: Paris Charles de Gaulle</li>
+      <li>Metro is the easiest & fastest</li>
+      <li>Walkable city with cafés everywhere</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  © 2025 AdventureHub — Paris Guide • By Kaunain Fathima
+</footer>
+
+</div>
 </body>
 </html>
