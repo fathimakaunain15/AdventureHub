@@ -2,31 +2,211 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Singapore – Futuristic City</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Singapore – Futuristic City & Gardens | Premium Guide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
- body { background:#131322; color:white; font-family:Arial; margin:0; }
- .section { padding:20px; background:#1e1e2f; margin:20px; border-radius:18px; }
- h1 { color:#c8e5ff; }
+:root{
+  --bg:#04130d;
+  --card:#0d2617;
+  --card-soft:#123323;
+  --accent:#7bd88f;
+  --accent-soft:rgba(123,216,143,.18);
+  --text-main:#f7fff9;
+  --text-soft:#cce7d5;
+  --border-soft:rgba(255,255,255,.06);
+}
+body{
+  margin:0;
+  background:radial-gradient(circle at top left,#0b2a19,#020807);
+  color:var(--text-main);
+  font-family:"Poppins",sans-serif;
+}
+.page{max-width:1100px;margin:auto;padding:18px 16px;}
+.section{
+  background:var(--card);
+  padding:18px;
+  margin-bottom:18px;
+  border-radius:20px;
+  border:1px solid var(--border-soft);
+}
+nav{display:flex;justify-content:space-between;margin-bottom:18px;}
+a{text-decoration:none;color:inherit;}
+.brand{font-size:22px;font-weight:700;color:var(--accent);}
+.nav-links{display:flex;gap:18px;}
+
+.hero{
+  position:relative;
+  padding:20px;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at top,rgba(123,216,143,.3),transparent 55%);
+  opacity:.95;
+}
+.hero-inner{position:relative;z-index:1;}
+
+h1{font-size:26px;margin:0 0 6px;}
+p{font-size:14px;color:var(--text-soft);}
+
+.pill{
+  padding:6px 10px;
+  background:var(--accent-soft);
+  border-radius:999px;
+  font-size:11px;
+  color:var(--accent);
+  margin-right:6px;
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:14px;
+}
+
+@media(max-width:720px){
+  .split{grid-template-columns:1fr;}
+  h1{font-size:22px;}
+}
+
+ul{padding-left:18px;}
+li{color:var(--text-soft);font-size:14px;margin-bottom:4px;}
+
+.hotel{
+  background:var(--card-soft);
+  padding:10px;
+  border-radius:14px;
+  margin-bottom:8px;
+  border:1px solid rgba(255,255,255,.05);
+}
+
+footer{
+  text-align:center;
+  font-size:11px;
+  color:var(--text-soft);
+  margin-top:22px;
+  opacity:.7;
+}
 </style>
 </head>
-<body>
 
-<nav style="display:flex; justify-content:space-between; align-items:center; padding:20px; font-size:18px;">
- <a href="index.html" style="font-weight:bold; color:#f7d57e; font-size:22px; text-decoration:none;">AdventureHub</a>
- <div style="display:flex; gap:20px;">
-   <a href="manali.html" style="color:white;">Manali</a>
-   <a href="shimla.html" style="color:white;">Shimla</a>
-   <a href="nainital.html" style="color:white;">Nainital</a>
-   <a href="kashmir.html" style="color:white;">Kashmir</a>
-   <a href="andaman.html" style="color:white;">Andaman</a>
- </div>
+<body>
+<div class="page">
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="brand">AdventureHub</a>
+  <div class="nav-links">
+    <a href="manali.html">Manali</a>
+    <a href="shimla.html">Shimla</a>
+    <a href="nainital.html">Nainital</a>
+    <a href="kashmir.html">Kashmir</a>
+    <a href="andaman.html">Andaman</a>
+  </div>
 </nav>
 
-<div class="section">
-<h1>Singapore — Modern, Clean & Futuristic</h1>
-<p>Marina Bay Sands, Gardens by the Bay, Sentosa, shopping & nightlife.</p>
-</div>
+<!-- HERO -->
+<section class="section hero">
+ <div class="hero-inner">
+    <span class="pill">Premium Guide</span>
+    <h1>Singapore — Futuristic City of Gardens & Lights</h1>
+    <p>
+      Ultra-modern skyline, Gardens by the Bay, Sentosa Island, luxury malls, 
+      night safaris & world-class cleanliness — Singapore feels like the future.
+    </p>
+    <span class="pill">Best Time: All Year</span>
+    <span class="pill">Perfect For: Couples • Luxury • Family</span>
+ </div>
+</section>
 
+<!-- OVERVIEW -->
+<section class="section split">
+ <div>
+    <h2>Overview</h2>
+    <p>
+      Singapore is a global hub of modern architecture, clean streets, greenery, 
+      delicious food & stunning tourist attractions.
+    </p>
+    <ul>
+      <li>Country: Singapore</li>
+      <li>Famous For: Gardens by the Bay, Marina Bay Sands, Sentosa</li>
+      <li>Vibe: Futuristic + Clean + Luxurious</li>
+    </ul>
+ </div>
+
+ <div>
+    <h2>Budget (Per Day)</h2>
+    <ul>
+      <li>Budget: ₹4k–7k</li>
+      <li>Comfort: ₹8k–12k</li>
+      <li>Luxury: ₹15k+</li>
+    </ul>
+ </div>
+</section>
+
+<!-- PLACES -->
+<section class="section split">
+ <div>
+    <h2>Top Places to Visit</h2>
+    <ul>
+      <li>Marina Bay Sands</li>
+      <li>Gardens by the Bay</li>
+      <li>Sentosa Island</li>
+      <li>Universal Studios</li>
+      <li>Merlion Park</li>
+      <li>Cloud Forest</li>
+      <li>Singapore Zoo Night Safari</li>
+    </ul>
+ </div>
+
+ <div>
+    <h2>Activities</h2>
+    <ul>
+      <li>🌆 Marina Bay night walk</li>
+      <li>🎢 Universal Studios rides</li>
+      <li>🍜 Food tour at Hawker Centres</li>
+      <li>🌴 Beach time at Sentosa</li>
+      <li>🌉 Supertree Grove light show</li>
+    </ul>
+ </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="section">
+ <h2>2–3 Day Itinerary</h2>
+ <ul>
+   <li><b>Day 1:</b> Gardens by the Bay → Marina Bay Sands</li>
+   <li><b>Day 2:</b> Sentosa → Universal Studios</li>
+   <li><b>Day 3:</b> Chinatown → Night Safari</li>
+ </ul>
+</section>
+
+<!-- HOTELS -->
+<section class="section split">
+ <div>
+    <h2>Best Hotels</h2>
+    <div class="hotel"><b>Marina Bay Sands</b> — Infinity pool luxury</div>
+    <div class="hotel"><b>Pan Pacific Singapore</b> — Skyline views</div>
+    <div class="hotel"><b>V Hotel Lavender</b> — Comfortable budget</div>
+    <div class="hotel"><b>Hostels in Bugis</b> — Affordable</div>
+ </div>
+
+ <div>
+    <h2>How to Reach</h2>
+    <ul>
+      <li>Airport: Changi — one of the best in the world</li>
+      <li>Best explored via MRT (metro)</li>
+      <li>Taxis are easy & safe</li>
+    </ul>
+ </div>
+</section>
+
+<footer>
+ © 2025 AdventureHub — Singapore Guide • By Kaunain Fathima
+</footer>
+
+</div>
 </body>
 </html>
