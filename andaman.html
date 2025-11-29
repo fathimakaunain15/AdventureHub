@@ -3,31 +3,249 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Andaman Islands – Paradise</title>
+<title>Andaman – Blue Paradise Islands | Premium Guide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-    body { background:#0e0e1a; color:white; font-family:Arial; margin:0; }
-    .section { padding:20px; background:#17172a; margin:20px; border-radius:18px; }
-    h1 { color:#ffd28f; }
+:root {
+  --bg: #04130d;
+  --card: #0d2617;
+  --card-soft: #123323;
+  --accent: #7bd88f;
+  --accent-soft: rgba(123,216,143,0.18);
+  --text-main: #f7fff9;
+  --text-soft: #cce7d5;
+  --border-soft: rgba(255,255,255,0.06);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  background: radial-gradient(circle at top left, #0b2a19, #020807);
+  color: var(--text-main);
+}
+
+.page { max-width: 1100px; margin:auto; padding:18px 16px 40px; }
+a { text-decoration:none; color:inherit; }
+
+/* NAVBAR */
+nav { display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
+.brand { font-size:22px; font-weight:700; color:var(--accent); }
+.nav-links { display:flex; gap:18px; font-size:14px; }
+.nav-links a:hover { text-decoration:underline; }
+
+/* SECTIONS */
+.section {
+  background: var(--card);
+  border-radius: 20px;
+  border: 1px solid var(--border-soft);
+  margin-bottom: 18px;
+  padding: 18px;
+}
+
+/* HERO */
+.hero {
+  position:relative;
+  padding:20px 18px;
+}
+.hero::before {
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(circle at top, rgba(123,216,143,0.3), transparent 55%),
+    linear-gradient(180deg, rgba(0,0,0,0.1), #03140c);
+  opacity:0.95;
+}
+.hero-inner { position:relative; z-index:1; }
+.hero-title { font-size:26px; margin-bottom:4px; }
+.hero-sub { font-size:14px; color:var(--text-soft); margin-bottom:10px; }
+.pill {
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:11px;
+  background:var(--accent-soft);
+  color:var(--accent);
+  display:inline-block;
+  border:1px solid rgba(123,216,143,0.6);
+  margin-right:6px;
+}
+
+/* SPLIT */
+.split {
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:14px;
+}
+@media(max-width:720px){ .split { grid-template-columns:1fr; } }
+
+h2 { font-size:18px; margin-bottom:6px; }
+p, li { font-size:14px; color:var(--text-soft); }
+ul { padding-left:18px; }
+
+/* HOTELS */
+.hotel-list { display:flex; flex-direction:column; gap:8px; }
+.hotel { background:var(--card-soft); padding:10px; border-radius:14px; border:1px solid rgba(255,255,255,0.05); }
+.hotel-title { font-size:14px; font-weight:600; }
+.hotel-meta { font-size:12px; color:var(--text-soft); }
+
+/* FOOTER */
+footer {
+  text-align:center; margin-top:20px;
+  font-size:11px; color:var(--text-soft); opacity:0.7;
+}
 </style>
 </head>
+
 <body>
+<div class="page">
 
-<nav style="display:flex; justify-content:space-between; align-items:center; padding:20px; font-size:18px;">
-    <a href="index.html" style="font-weight:bold; color:#f7d57e; font-size:22px; text-decoration:none;">AdventureHub</a>
-
-    <div style="display:flex; gap:20px;">
-        <a href="manali.html" style="color:white; text-decoration:none;">Manali</a>
-        <a href="shimla.html" style="color:white; text-decoration:none;">Shimla</a>
-        <a href="nainital.html" style="color:white; text-decoration:none;">Nainital</a>
-        <a href="kashmir.html" style="color:white; text-decoration:none;">Kashmir</a>
-        <a href="andaman.html" style="color:white; text-decoration:none;">Andaman</a>
-    </div>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="brand">AdventureHub</a>
+  <div class="nav-links">
+    <a href="manali.html">Manali</a>
+    <a href="shimla.html">Shimla</a>
+    <a href="nainital.html">Nainital</a>
+    <a href="kashmir.html">Kashmir</a>
+    <a href="andaman.html">Andaman</a>
+  </div>
 </nav>
 
-<div class="section">
-<h1>Andaman Islands — Turquoise Paradise</h1>
-<p>White sand beaches, blue water, coral reefs, sunsets & luxury islands.</p>
-</div>
+<!-- HERO -->
+<section class="section hero">
+  <div class="hero-inner">
+    <p class="pill">Premium Destination Guide</p>
+    <h1 class="hero-title">Andaman — Turquoise Blue Paradise</h1>
+    <p class="hero-sub">
+      Crystal-clear waters, coral reefs, white sand beaches, scuba diving,
+      water sports, sunsets and peaceful island life.
+    </p>
 
+    <div>
+      <span class="pill">Best time: Oct–May</span>
+      <span class="pill">Ideal Trip: 4–6 Days</span>
+      <span class="pill">Perfect for: Honeymoon, Beach Lovers</span>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section split">
+  <div>
+    <h2>Quick Overview</h2>
+    <p>
+      Andaman is India’s most beautiful tropical destination featuring
+      crystal blue beaches, water activities, coral reefs, island resorts,
+      and a peaceful atmosphere ideal for couples & family trips.
+    </p>
+    <ul>
+      <li><b>Main Islands:</b> Port Blair, Havelock, Neil</li>
+      <li><b>Known for:</b> Blue waters, scuba, beaches</li>
+      <li><b>Vibe:</b> Relaxed, tropical, romantic</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Best For</h2>
+    <ul>
+      <li>✔ Honeymoon couples</li>
+      <li>✔ Beach & nature lovers</li>
+      <li>✔ Scuba & snorkeling</li>
+    </ul>
+
+    <h2 style="margin-top:10px;">Trip Budget</h2>
+    <ul>
+      <li>Budget: ₹12k–18k</li>
+      <li>Comfort: ₹20k–35k</li>
+      <li>Luxury: ₹45k+</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PLACES -->
+<section class="section split">
+  <div>
+    <h2>Top Places to Visit</h2>
+    <ul>
+      <li><b>Radhanagar Beach</b> – Asia’s best beach</li>
+      <li><b>Elephant Beach</b> – Water sports paradise</li>
+      <li><b>Kalapathar Beach</b> – Black stones & turquoise water</li>
+      <li><b>Neil Island</b> – Natural bridge & beaches</li>
+      <li><b>Port Blair</b> – Cellular Jail, museums</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Popular Activities</h2>
+    <ul>
+      <li>🤿 Scuba diving</li>
+      <li>🪸 Snorkeling (coral reefs)</li>
+      <li>🚤 Jet ski & sea walk</li>
+      <li>📸 Sunset photography</li>
+      <li>🌊 Glass-bottom boat ride</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="section">
+  <h2>4–5 Days Itinerary</h2>
+  <ul>
+    <li><b>Day 1:</b> Port Blair – Cellular Jail + Light Show</li>
+    <li><b>Day 2:</b> Havelock – Radhanagar Beach</li>
+    <li><b>Day 3:</b> Elephant Beach – Water sports</li>
+    <li><b>Day 4:</b> Neil Island – Natural Bridge</li>
+    <li><b>Day 5:</b> Local shopping + depart</li>
+  </ul>
+</section>
+
+<!-- HOTELS -->
+<section class="section split">
+  <div>
+    <h2>Best Hotels in Andaman</h2>
+    <div class="hotel-list">
+      <div class="hotel">
+        <div class="hotel-title">Taj Exotica, Havelock</div>
+        <div class="hotel-meta">Luxury beachfront.</div>
+      </div>
+      <div class="hotel">
+        <div class="hotel-title">Barefoot Resort</div>
+        <div class="hotel-meta">Eco luxury cottages.</div>
+      </div>
+      <div class="hotel">
+        <div class="hotel-title">SeaShell Havelock</div>
+        <div class="hotel-meta">Beachside premium stay.</div>
+      </div>
+      <div class="hotel">
+        <div class="hotel-title">Budget Hotels</div>
+        <div class="hotel-meta">Affordable island stays.</div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h2>How to Reach</h2>
+    <ul>
+      <li><b>Airport:</b> Port Blair</li>
+      <li><b>Ferries:</b> Port Blair → Havelock → Neil</li>
+      <li><b>Local Transport:</b> Autos, bikes, taxis</li>
+    </ul>
+
+    <h2 style="margin-top:10px;">Best Time</h2>
+    <ul>
+      <li><b>Oct–May:</b> Best season</li>
+      <li><b>June–Sept:</b> Avoid monsoons</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  © 2025 AdventureHub — Andaman Guide • Created by Kaunain Fathima
+</footer>
+
+</div>
 </body>
 </html>
