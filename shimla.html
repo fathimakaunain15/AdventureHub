@@ -3,31 +3,302 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shimla – Queen of Hills</title>
+<title>Shimla – Queen of Hills | Premium Guide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-    body { background:#0e0e1a; color:white; font-family:Arial; margin:0; }
-    .section { padding:20px; background:#17172a; margin:20px; border-radius:18px; }
-    h1, h2 { color:#bb9cff; }
+:root {
+  --bg: #04130d;
+  --bg-soft: #071c12;
+  --card: #0d2617;
+  --card-soft: #123323;
+  --accent: #7bd88f;
+  --accent-soft: rgba(123, 216, 143, 0.18);
+  --text-main: #f7fff9;
+  --text-soft: #cce7d5;
+  --border-soft: rgba(255,255,255,0.06);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  background: radial-gradient(circle at top left, #0b2a19, #020807);
+  color: var(--text-main);
+}
+
+a { text-decoration: none; color: inherit; }
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 16px 40px;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+}
+
+.nav-links a:hover { text-decoration: underline; }
+
+/* SECTIONS */
+.section {
+  background: var(--card);
+  border-radius: 20px;
+  border: 1px solid var(--border-soft);
+  margin-bottom: 18px;
+  padding: 18px 18px 16px;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 18px;
+}
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at top left, rgba(123,216,143,0.28), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(3,20,12,0.9), #031009);
+  opacity:0.95;
+}
+.hero-inner { position: relative; z-index: 1; }
+
+.hero-title {
+  font-size: 26px;
+  margin-bottom: 4px;
+}
+.hero-sub {
+  font-size: 14px;
+  color: var(--text-soft);
+  margin-bottom: 10px;
+}
+.hero-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.pill {
+  padding:5px 10px;
+  border-radius:999px;
+  font-size:11px;
+  background:var(--accent-soft);
+  color:var(--accent);
+  border:1px solid rgba(123,216,143,0.7);
+}
+
+/* SPLIT GRID */
+.split {
+  display:grid;
+  grid-template-columns: minmax(0,1.4fr) minmax(0,1fr);
+  gap:14px;
+}
+
+@media (max-width: 720px) {
+  .split { grid-template-columns: 1fr; }
+  .hero-title { font-size:22px; }
+  .nav-links { font-size:12px; gap:10px; }
+}
+
+h2 {
+  font-size:18px;
+  margin-bottom:8px;
+}
+
+p, li {
+  font-size:14px;
+  color: var(--text-soft);
+}
+
+ul { padding-left:18px; }
+
+/* HOTELS */
+.hotel-list { display:flex; flex-direction:column; gap:8px; }
+.hotel {
+  padding:8px 10px;
+  border-radius:14px;
+  background:var(--card-soft);
+  border:1px solid rgba(255,255,255,0.05);
+}
+.hotel-title { font-size:14px; font-weight:600; }
+.hotel-meta { font-size:12px; color:var(--text-soft); }
+
+/* FOOTER */
+footer {
+  margin-top:24px;
+  text-align:center;
+  font-size:11px;
+  opacity:0.8;
+  color:var(--text-soft);
+}
 </style>
 </head>
+
 <body>
+<div class="page">
 
-<nav style="display:flex; justify-content:space-between; align-items:center; padding:20px; font-size:18px;">
-    <a href="index.html" style="font-weight:bold; color:#f7d57e; font-size:22px; text-decoration:none;">AdventureHub</a>
-
-    <div style="display:flex; gap:20px;">
-        <a href="manali.html" style="color:white; text-decoration:none;">Manali</a>
-        <a href="shimla.html" style="color:white; text-decoration:none;">Shimla</a>
-        <a href="nainital.html" style="color:white; text-decoration:none;">Nainital</a>
-        <a href="kashmir.html" style="color:white; text-decoration:none;">Kashmir</a>
-        <a href="andaman.html" style="color:white; text-decoration:none;">Andaman</a>
-    </div>
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="brand">AdventureHub</a>
+  <div class="nav-links">
+    <a href="manali.html">Manali</a>
+    <a href="shimla.html">Shimla</a>
+    <a href="nainital.html">Nainital</a>
+    <a href="kashmir.html">Kashmir</a>
+    <a href="andaman.html">Andaman</a>
+  </div>
 </nav>
 
-<div class="section">
-<h1>Shimla — Queen of Hills</h1>
-<p>Snowfall, British architecture, Mall Road, Kufri & pine forests.</p>
-</div>
+<!-- HERO -->
+<section class="section hero">
+  <div class="hero-inner">
+    <p class="pill">Premium Destination Guide</p>
+    <h1 class="hero-title">Shimla — Queen of the Hills</h1>
+    <p class="hero-sub">
+      Colonial charm, Mall Road, lush pine forests, cool weather and stunning Himalayan views.
+      Perfect for couples, families & peaceful getaways.
+    </p>
 
+    <div class="hero-tags">
+      <span class="pill">Best time: Mar–June • Dec–Jan (snow)</span>
+      <span class="pill">Ideal trip: 3–4 days</span>
+      <span class="pill">Perfect for: Couples, Family, Nature</span>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section split">
+  <div>
+    <h2>Quick Overview</h2>
+    <p>
+      Shimla, the capital of Himachal Pradesh, is known for its pleasant weather,
+      British-era architecture, scenic viewpoints, and pine-covered hills.
+    </p>
+    <ul>
+      <li><b>Altitude:</b> 2,200 m</li>
+      <li><b>Experience:</b> Calm, scenic & slow life</li>
+      <li><b>Known for:</b> Mall Road, Ridge, toy train, snowfall</li>
+      <li><b>Vibe:</b> Relaxed hill station</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Best For</h2>
+    <ul>
+      <li>✔ Honeymoon couples</li>
+      <li>✔ Family vacations</li>
+      <li>✔ Calm nature lovers</li>
+    </ul>
+    <h2 style="margin-top:10px;">Trip Budget</h2>
+    <ul>
+      <li>Budget: ₹6k–₹10k</li>
+      <li>Comfort: ₹12k–₹18k</li>
+      <li>Luxury: ₹20k+</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PLACES + ACTIVITIES -->
+<section class="section split">
+  <div>
+    <h2>Top Places to Visit</h2>
+    <ul>
+      <li><b>Mall Road</b> – Shopping, cafés & street food</li>
+      <li><b>The Ridge</b> – Open hilltop with amazing views</li>
+      <li><b>Kufri</b> – Snow, horse riding, adventure park</li>
+      <li><b>Jakhoo Temple</b> – Hilltop Hanuman temple</li>
+      <li><b>Green Valley</b> – Scenic pine forest viewpoint</li>
+      <li><b>Naldehra</b> – Golf course & nature trails</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Popular Activities</h2>
+    <ul>
+      <li>❄ Snow play in Kufri (winter)</li>
+      <li>🚂 Toy train ride (UNESCO heritage)</li>
+      <li>🌲 Forest walks & viewpoints</li>
+      <li>📸 Photography & sunset watching</li>
+      <li>☕ Café-hopping on Mall Road</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="section">
+  <h2>Suggested 3-Day Itinerary</h2>
+  <ul>
+    <li><b>Day 1</b> – Mall Road, Ridge, Christ Church, café hopping</li>
+    <li><b>Day 2</b> – Kufri day trip, Green Valley, adventure activities</li>
+    <li><b>Day 3</b> – Jakhoo Temple, local sightseeing, depart</li>
+  </ul>
+</section>
+
+<!-- HOTELS + HOW TO REACH -->
+<section class="section split">
+  <div>
+    <h2>Top Hotels in Shimla</h2>
+    <div class="hotel-list">
+      <div class="hotel"><div class="hotel-title">The Oberoi Cecil</div><div class="hotel-meta">Luxury heritage stay.</div></div>
+      <div class="hotel"><div class="hotel-title">Radisson Hotel Shimla</div><div class="hotel-meta">Stunning views.</div></div>
+      <div class="hotel"><div class="hotel-title">Clarkes Hotel</div><div class="hotel-meta">Colonial charm.</div></div>
+      <div class="hotel"><div class="hotel-title">Hostels</div><div class="hotel-meta">Budget-friendly.</div></div>
+    </div>
+  </div>
+
+  <div>
+    <h2>How to Reach</h2>
+    <ul>
+      <li><b>Nearest Airport:</b> Jubbarhatti (20 km)</li>
+      <li><b>By Train:</b> Toy train from Kalka</li>
+      <li><b>By Road:</b> Delhi → Shimla (8–9 hrs)</li>
+    </ul>
+
+    <h2 style="margin-top:10px;">Best Time</h2>
+    <ul>
+      <li><b>Mar–Jun:</b> Pleasant weather</li>
+      <li><b>Dec–Jan:</b> Snowfall</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="section">
+  <h2>Travel Tips</h2>
+  <ul>
+    <li>Avoid weekends on Mall Road – very crowded.</li>
+    <li>Carry warm layers even in summer evenings.</li>
+    <li>Book Kufri activities in advance in peak months.</li>
+  </ul>
+</section>
+
+<footer>
+  © 2025 AdventureHub — Shimla Guide • Created by Kaunain Fathima
+</footer>
+
+</div>
 </body>
 </html>
