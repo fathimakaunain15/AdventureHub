@@ -2,31 +2,232 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kodaikanal – Princess of Hills</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kodaikanal – Misty Hills & Lakes | Premium Guide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
- body { background:#121222; color:white; font-family:Arial; margin:0; }
- .section { padding:20px; background:#1c1c2c; margin:20px; border-radius:18px; }
- h1 { color:#c9ffa9; }
+:root{
+  --bg:#04130d;
+  --card:#0d2617;
+  --card-soft:#123323;
+  --accent:#7bd88f;
+  --accent-soft:rgba(123,216,143,.18);
+  --text-main:#f7fff9;
+  --text-soft:#cce7d5;
+  --border-soft:rgba(255,255,255,0.06);
+}
+
+body{
+  margin:0;
+  background:radial-gradient(circle at top left,#0b2a19,#020807);
+  font-family:"Poppins",sans-serif;
+  color:var(--text-main);
+}
+
+.page{
+  max-width:1100px;
+  margin:auto;
+  padding:18px 16px;
+}
+
+.section{
+  background:var(--card);
+  border-radius:20px;
+  border:1px solid var(--border-soft);
+  padding:18px;
+  margin-bottom:18px;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
+a{text-decoration:none;color:inherit;}
+.brand{
+  font-size:22px;
+  font-weight:700;
+  color:var(--accent);
+}
+.nav-links{
+  display:flex;
+  gap:18px;
+  font-size:14px;
+}
+
+.hero{
+  position:relative;
+  padding:20px;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at top,rgba(123,216,143,.26),transparent 55%);
+  opacity:.95;
+}
+.hero-inner{position:relative;z-index:1;}
+
+h1{font-size:26px;margin:0 0 6px;}
+p{font-size:14px;color:var(--text-soft);}
+
+.pill{
+  padding:6px 10px;
+  font-size:11px;
+  border-radius:999px;
+  background:var(--accent-soft);
+  color:var(--accent);
+  margin-right:6px;
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:14px;
+}
+
+@media(max-width:720px){
+  .split{grid-template-columns:1fr;}
+  h1{font-size:22px;}
+}
+
+ul{padding-left:18px;}
+li{font-size:14px;color:var(--text-soft);margin-bottom:4px;}
+
+.hotel{
+  background:var(--card-soft);
+  padding:10px;
+  border-radius:14px;
+  margin-bottom:8px;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+footer{
+  text-align:center;
+  margin-top:22px;
+  font-size:11px;
+  color:var(--text-soft);
+  opacity:.7;
+}
 </style>
 </head>
-<body>
 
-<nav style="display:flex; justify-content:space-between; align-items:center; padding:20px; font-size:18px;">
- <a href="index.html" style="font-weight:bold; color:#f7d57e; font-size:22px; text-decoration:none;">AdventureHub</a>
- <div style="display:flex; gap:20px;">
-   <a href="manali.html" style="color:white;">Manali</a>
-   <a href="shimla.html" style="color:white;">Shimla</a>
-   <a href="nainital.html" style="color:white;">Nainital</a>
-   <a href="kashmir.html" style="color:white;">Kashmir</a>
-   <a href="andaman.html" style="color:white;">Andaman</a>
- </div>
+<body>
+<div class="page">
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="brand">AdventureHub</a>
+  <div class="nav-links">
+    <a href="manali.html">Manali</a>
+    <a href="shimla.html">Shimla</a>
+    <a href="nainital.html">Nainital</a>
+    <a href="kashmir.html">Kashmir</a>
+    <a href="andaman.html">Andaman</a>
+  </div>
 </nav>
 
-<div class="section">
-<h1>Kodaikanal — Lakes, Forests & Mist</h1>
-<p>Kodai lake, pine forests, viewpoints, trekking paths & cool breeze.</p>
-</div>
+<!-- HERO -->
+<section class="section hero">
+  <div class="hero-inner">
+    <span class="pill">Premium Guide</span>
+    <h1>Kodaikanal — Misty Hills & Lakes</h1>
+    <p>
+      Kodaikanal is Tamil Nadu’s queen of mountains—misty valleys, forests,
+      lakes, viewpoints and peaceful nature.
+    </p>
 
+    <span class="pill">Best Time: Oct–June</span>
+    <span class="pill">Perfect For: Couples • Nature • Relaxation</span>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section split">
+  <div>
+    <h2>Overview</h2>
+    <p>
+      Known as the “Princess of Hill Stations”, Kodaikanal is blessed with
+      misty forests, beautiful lakes, waterfalls and stunning viewpoints.
+    </p>
+    <ul>
+      <li>Altitude: 2,133m</li>
+      <li>Known For: Lake, Coaker’s Walk, Pillar Rocks</li>
+      <li>Vibe: Calm + Romantic + Nature</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Budget</h2>
+    <ul>
+      <li>Budget: ₹4k–8k</li>
+      <li>Comfort: ₹10k–15k</li>
+      <li>Luxury: ₹18k+</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TOP PLACES -->
+<section class="section split">
+  <div>
+    <h2>Top Places to Visit</h2>
+    <ul>
+      <li>Kodaikanal Lake</li>
+      <li>Coaker’s Walk</li>
+      <li>Pillar Rocks</li>
+      <li>Silent Valley View</li>
+      <li>Guna Caves</li>
+      <li>Silver Cascade Waterfall</li>
+      <li>Bryant Park</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Activities</h2>
+    <ul>
+      <li>🚣 Boating in Kodaikanal Lake</li>
+      <li>🌫 Misty viewpoint photography</li>
+      <li>🌳 Forest walks</li>
+      <li>🍓 Homemade chocolates shopping</li>
+      <li>⭐ Stargazing (clear nights)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="section">
+  <h2>2–3 Day Itinerary</h2>
+  <ul>
+    <li><b>Day 1:</b> Lake → Coaker’s Walk → Bryant Park</li>
+    <li><b>Day 2:</b> Pillar Rocks → Guna Caves → Silent Valley</li>
+    <li><b>Day 3:</b> Silver Cascade → Shopping → Return</li>
+  </ul>
+</section>
+
+<!-- HOTELS -->
+<section class="section split">
+  <div>
+    <h2>Best Hotels</h2>
+    <div class="hotel"><b>The Carlton</b> — Luxury lake stay</div>
+    <div class="hotel"><b>Sterling Kodai Valley</b> — Scenic views</div>
+    <div class="hotel"><b>Citrus Hotel</b> — Comfortable stay</div>
+    <div class="hotel"><b>Local Homestays</b> — Budget friendly</div>
+  </div>
+
+  <div>
+    <h2>How to Reach</h2>
+    <ul>
+      <li>Airport: Madurai (nearest)</li>
+      <li>Railway: Kodai Road</li>
+      <li>Road: Coimbatore / Madurai → Kodaikanal</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  © 2025 AdventureHub — Kodaikanal Guide • By Kaunain Fathima
+</footer>
+
+</div>
 </body>
 </html>
